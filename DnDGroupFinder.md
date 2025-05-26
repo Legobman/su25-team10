@@ -38,7 +38,7 @@ Table of Contents
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
 | Matt | 5/24    | Initial SRS         | 1.0       |
-|      |         |                     |           |
+| Matt | 5/25    | Finished Section 3  | 1.1       |
 |      |         |                     |           |
 
 ## 1. Introduction
@@ -92,35 +92,36 @@ The specific requirements should:
 * Conform to agreed upon syntax, keywords, and terms.
 
 #### 3.1.1 User interfaces
-Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
-
-Could be further divided into Usability and Convenience requirements.
+Web pages using HTML, CSS, and Java.
 
 #### 3.1.2 Hardware interfaces
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+Devices that have web browser capabilities.
 
 #### 3.1.3 Software interfaces
-Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
+- Java jdk 21
+- Neon PostgreSQL
+- SpringBoot 3.5
 
 ### 3.2 Non Functional Requirements 
 
 #### 3.2.1 Performance
-If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
+- NFR0: A novice user will be able to add and manage game groups in less than 10 minutes.
+- NFR1: An expert user will be able to add and manage game groups in less than 3 minutes.
 
 #### 3.2.2 Security
-Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
+- NFR2: The system will only allow users with an account into it, using usernames and passworeds.
 
 #### 3.2.3 Reliability
-Specify the factors required to establish the required reliability of the software system at time of delivery.
+- NFR3: Every webpage link will be functional, no 404 errors.
 
 #### 3.2.4 Availability
-Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
+- NFR4: The system will be online 24/7. Any needed updates or maintenance will be scheduled when the system is less busy then usual.
 
 #### 3.2.5 Compliance
-Specify the requirements derived from existing standards or regulations
+- NFR5: The game groups in the game group board will contain all information Players need to know.
 
 #### 3.2.6 Cost
-Specify monetary cost of the software product.
+- NFR6: This product should cost zero dollars to produce. 
 
 #### 3.2.7 Deadline
-Specify schedule for delivery of the software product.
+- NFR7: The final product will be delievered June 18th.
