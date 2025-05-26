@@ -81,15 +81,14 @@ List any assumed factors (as opposed to known facts) that could affect the requi
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
-This section specifies the software product's requirements. Specify all of the software requirements to a level of detail sufficient to enable designers to design a software system to satisfy those requirements, and to enable testers to test that the software system satisfies those requirements.
-
-The specific requirements should:
-* Be uniquely identifiable.
-* State the subject of the requirement (e.g., system, software, etc.) and what shall be done.
-* Optionally state the conditions and constraints, if any.
-* Describe every input (stimulus) into the software system, every output (response) from the software system, and all functions performed by the software system in response to an input or in support of an output.
-* Be verifiable (e.g., the requirement realization can be proven to the customer's satisfaction)
-* Conform to agreed upon syntax, keywords, and terms.
+- FR0: The system will allow users to create accounts as either a player or a game master. 
+  - The username for each account should be unique.
+- FR1: Users will be able to modify their own profiles at any time.
+- FR2: The system shall allow game masters to create a new game groups by providing details including description, location, time frame, and number of player slots.
+- FR3: game masters will have be allowed to kick players from their game groups.
+- FR4: game masters will be able to edit or delete their game groups.
+- FR5: game masters will be able to view the game groups that specific players are in.
+- FR6: game masters will be able to respond to their ratings.
 
 #### 3.1.1 User interfaces
 Web pages using HTML, CSS, and Java.
