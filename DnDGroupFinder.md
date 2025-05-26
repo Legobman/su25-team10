@@ -39,18 +39,26 @@ Table of Contents
 | ---- | ------- | ------------------- | --------- |
 | Matt | 5/24    | Initial SRS         | 1.0       |
 | Matt | 5/25    | Finished Section 3  | 1.1       |
-|      |         |                     |           |
+|   Arodi   |    5/26     |         Section 1 in progress            |     1.2      |
 
 ## 1. Introduction
 
 ### 1.1 Document Purpose
-Describe the purpose of the SRS and its intended audience.
+The purpose of this Software Requirements Document is to describe a player's view and a game master's view requirements for the D&D Group Finder application.
+Player-Centered requirements describe the application from the player's view. These requirements include a description of different activities and levels of access based on user. 
+Game master-centered requirements describe the application from the game master's view. These requirements include description of different responsibilities and levels of access specific to managing campaigns, creating events, moderating players, and setting game preferences. They outline the tools and controls needed to effectively organize and oversee gameplay sessions within the D&D Group Finder application.
 
 ### 1.2 Product Scope
-Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
-Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
+The product specified in this Software Requirements Specification (SRS) is the D&D Group Finder, Version 1.0. This application is designed to aid Game Masters (GMs) and players within the Dungeons and Dragons (D&D) community. The system provides a simple online board game where Game Masters can post available campaigns, and Players can browse and join these games based on their interests and availablity. 
 
-### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          |
+The main  objective of the D&D Group finder is to streamline the process of finding and organizing D&D games, reducing the effort and time that is typically require to coordinate sessions. This software aims to build a more connected and accessible commutiy for D&D lovers.
+
+Key goals:
+- Giving Players a user friendly way to search for and join matches.
+- Providing GMs the toolbox to manage and advertise game sessions.
+- Simplifying the match making process between GMs and Players.
+
+### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          
 
 ### 1.4 References
 List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
