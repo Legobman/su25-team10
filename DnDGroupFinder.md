@@ -40,6 +40,7 @@ Table of Contents
 | Matt | 5/24    | Initial SRS         | 1.0       |
 | Matt | 5/25    | Finished Section 3  | 1.1       |
 |   Arodi   |    5/26     |         Section 1 in progress            |     1.2      |
+|   Arodi   |    5/26     |         Section 2 in progress            |     1.3      |
 
 ## 1. Introduction
 
@@ -67,21 +68,71 @@ List any other documents or Web addresses to which this SRS refers. These may in
 Describe what the rest of the document contains and how it is organized.
 
 ## 2. Product Overview
-This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.
+The D&D Group Finder is a web-based application designed to connect Dungeons and Dragons Game Masters with interested players. The product aims to simplify the process of finding, joining, and managing D&D games through ha centralized platform. By providing a user-friendly interface and features tailored to both GMs and Players, the application supports the growing need for virtual and local tabletop game.
+
+The system is intended to address common issues in the D&D community, such as difficutly finding consistent groups, organizing session times, and matching players with similar play styles or preferences. GMs can create posts with game details, while Players can search, filter, and join games based on availability and interests. 
 
 ### 2.1 Product Functions
-Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
+The D&D Group Finder application will support the following major functions:
+
+User Registration:
+ - Allow users to sign up and log in securely as either a Game Master or Player.
+
+Game Posting and Management (Game Master):
+ - Enable Game Masters to create, edit, and delete game listings.
+ - Include fields such as campaign name, schedule, player requirements, and session format (online/in-person).
+
+Game Browsing and Joining (Player):
+ - Allow Players to browse available games.
+ - Provide filtering by category, schedule, game type, and location.
+ - Enable players to joing a game or express interest.
+
+User profiles:
+ - Allow both Players and GMs to edit their profiles, including experience level, preferences, and availability.
+
+Messaging or Contact System:
+ - Provides a way for Players and GMs to communicate after a match is made.
+
+Administrative Tools:
+ - Provibe basic tools to manage inappropiate content, remove inaactive games, and moderate user behavior.
 
 ### 2.2 Product Constraints
-This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
 
-* Interfaces to users, other applications or hardware.  
-* Quality of service constraints.  
-* Standards compliance.  
-* Constraints around design or implementation.
+User Interface Constraints:
+ - The application will be accessed via a web browser; therefore it must be responsive and compatible with major browsers (Chrome, Firefox, Edge).
+ - The frontend will be made using HTML, CSS, and JavaScript.
+
+Application and Database Interface:
+ - Backend Services will be implemented using Java and Spring Boot.
+
+Quality of Service Constraints:
+ - The system should respond to user actions within 2 seconds.
+ - The system should handle at least 100 concurrent users without performance degradation.
+
+Standards Complience:
+ - Code should follow standard Java coding conventions and web accessibility best practices.
+ - Security best practices must be followed.
+
+
   
 ### 2.3 User Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
+The D&D Group Finder will be used by two primary user classes: Game Masters (GMs) and Players. Each group interacts with the application in different ways, based on their roles, and priviledges, and needs.
+
+1. Game Master (GMs)
+   -  Role: Organize and host D&D campaigns.
+   -  Frequency of Use: Moderate to frequent.
+   -  Key Functions used: Game creation, editing, player management, and communication tools.
+   -  Technical Expertise: Basic computer and web skills.
+   -  Priviledges: Standard user access, primarily focused on searching and joining games.
+   -  Importance: High - they form the community that engages with the listings.
+   
+2. Players
+   - Role: Search for and join D&D campaigns.
+   - Frequency of Use: Frequent (especially during game-finding periods).
+   - Key Functions used: Account creation, game browsing, joining requests, profile setup.
+   - Technical Expertise: Basic computer and web usage skills.
+   - Privilages: Standard user access, primarily focused on searching and joining games.
+   - Importance: High - they form the community that engages with the listings. 
 
 ### 2.4 Assumptions and Dependencies
 List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
