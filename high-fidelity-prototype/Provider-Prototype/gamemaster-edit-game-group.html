@@ -28,16 +28,33 @@
   <div class="center">
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-            <h3>Game Master Login</h3>
-            <form action="gamemaster-homepage.html">
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br>
-                <label for="pwd">Password:</label><br>
-                <input type="password" id="pwd" name="pwd" minlength="8" required><br>
-                <input class="btn btn-primary" type="submit" value="Login">
+            <h3>Game Group Editor</h3>
+            <p>Please re-enter any unchanged information</p>
+            <form action="gamemaster-create-game-group.html">
+                <label for="gamegroupID">Game Group ID:</label><br>
+                <input type="number" id="gamegroupID" name="gamegroupID" required><br>
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location" required><br>
+                <label for="day">Day of the Week Played:</label><br>
+                <select name="day" id="day">
+                    <option value="sunday">Sunday</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                </select><br>
+                <label for="start">Start Time:</label><br>
+                <input type="time" id="start" name="start_time" required><br>
+                <label for="end">End Time:</label><br>
+                <input type="time" id="end" name="end_time" required><br>
+                <label for="slots">Number of Player slots:</label><br>
+                <input type="number" id="slots" name="number_of_player" required><br>
+                <label for="description">Description of the Game:</label>
+                <textarea id="description" name="description" required></textarea>
+                <input class="btn btn-primary" onclick="alert('Game Group Edited!')" type="submit" value="Edit Game Group">
             </form>
-            <a class="btn btn-secondary" href="gamemaster-signup.html">Sign Up</a>
-            
         </div>
       </div>
     </div>
