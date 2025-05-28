@@ -17,7 +17,7 @@
     2. Provider (Game Masters):
         1. Create/modify/remove provider profile - register as a game master.
         2. Create services - create game groups.
-        3. View customer statistics - see what players are in their groups.
+        3. View customer statistics - see what groups a player is in.
         4. Reply to reviews - comment to ratings.
     3. SysAdmin (Admin):
         1. Manage user access - ban Players and Game Masters.
