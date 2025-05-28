@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GM Homepage</title>
+    <title>Game Master Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="high-fidelity-prototype\styles.css">
     <link rel="stylesheet" href="../styles.css">
-    </head>
-  
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,24 +20,29 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="gamemaster-login.html">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
+          <a class="nav-link" href="gamemaster-homepage.html">Return to Homepage</a>
         </div>
       </div>
     </div>
   </nav>
-    <div class="center">
-      <div class="card text-center" style="width: 18rem;">
+  <div class="center">
+    <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-          <h3>Welcome Game Master</h3>
-          <img src="Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
-          <a class="btn btn-primary" href="gamemaster-create-game-group.html">Create Game Group</a><br>
-          <a class="btn btn-info" href="gamemaster-game-groups.html">View Game Groups</a><br>
-          <a class="btn btn-secondary" href="gamemaster-edit-game-group.html">Edit Game Groups</a><br>
-          <a class="btn btn-primary" href="gamemaster-reviews.html">View Reviews</a><br>
-          <a class="btn btn-info" href="gamemaster-player-lookup.html">Player Lookup</a><br>
-          <a class="btn btn-secondary" href="gamemaster-update-profile.html">Update Profile</a>
+            <h3>Game Master Password Change</h3>
+            <form action="gamemaster-homepage.html">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="cpassword">Current Password:</label><br>
+                <input type="password" id="cpassword" name="cpassword" minlength="8" required><br>
+                <label for="npassword">New Password:</label><br>
+                <input type="password" id="npassword" name="npassword" minlength="8" required><br>
+                <input class="btn btn-primary" onclick="alert('Password Changed.')" type="submit" value="Change Password">
+            </form>
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   </body>
-</html>
+</html> 
