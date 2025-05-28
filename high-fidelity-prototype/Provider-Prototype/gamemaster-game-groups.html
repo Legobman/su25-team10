@@ -36,7 +36,8 @@
                 <th scope="col">Day of the Week Played</th>
                 <th scope="col">Start Time</th>
                 <th scope="col">End Time</th>
-                <th scope="col">Description</th>
+                <th scope="col">Desc.</th>
+                <th scope="col">Player slots</th>
                 <th scope="col">Players</th>
                 </tr>
             </thead>
@@ -48,6 +49,7 @@
                 <td>3:00 PM</td>
                 <td>8:00 PM</td>
                 <td>Standard game of DnD</td>
+                <td>3</td>
                 <td>
                     <p>GoblinSlayer425</p>
                     <p>HumanFighter52</p>
@@ -61,6 +63,7 @@
                 <td>6:00 PM</td>
                 <td>11:00 PM</td>
                 <td>Dragon Lance Game of DnD</td>
+                <td>5</td>
                 <td>
                     <p>NoobSlayer24</p>
                     <p>AmKobold52</p>
@@ -69,6 +72,14 @@
                 </tr>
             </tbody>
             </table>
+            <p>Wish to kick a player?</p>
+            <form action="gamemaster-homepage.html">
+                <label for="GameID">Game Group ID:</label><br>
+                <input type="number" id="GameID" name="GameGroupID" required><br>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <input class="btn btn-primary" type="submit" value="Kick Player">
+            </form>
         </div>
       </div>
     </div>
