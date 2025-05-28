@@ -31,10 +31,9 @@
             <table class="table  table-striped-columns">
             <thead>
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">Review ID</th>
                 <th scope="col">Player Username</th>
                 <th scope="col">Review</th>
-                <th scope="col">Respond</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,22 +41,29 @@
                 <th scope="row">1</th>
                 <td>GoblinSlayer425</td>
                 <td>Great Game Master would join another game.</td>
-                <td></td>
                 </tr>
                 <tr>
                 <th scope="row">2</th>
                 <td>HumanFighter52</td>
-                <td>very welcoming, didn't judge how basic my character was.</td>
-                <td></td>
+                <td>Very welcoming, didn't judge how basic my character was.</td>
                 </tr>
                 <tr>
                 <th scope="row">3</th>
                 <td>PowerGamer67</td>
                 <td>Awful, wouldn't let me break his game.</td>
-                <td></td>
                 </tr>
             </tbody>
             </table>
+            <p>Wish to respond a player?</p>
+            <form action="gamemaster-game-groups.html">
+                <label for="ReviewID">Review ID:</label><br>
+                <input type="number" id="ReviewID" name="ReviewID" required><br>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="description">Your Response:</label><br>
+                <textarea id="description" name="description" required></textarea><br>
+                <input class="btn btn-primary"onclick="alert('Response made!')" type="submit" value="Kick Player">
+            </form>
         </div>
       </div>
     </div>
