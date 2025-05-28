@@ -41,6 +41,7 @@ Table of Contents
 | Matt | 5/25    | Finished Section 3  | 1.1       |
 |   Arodi   |    5/26     |         Section 1 in progress            |     1.2      |
 |   Arodi   |    5/26     |         Section 2 in progress            |     1.3      |
+|   Arodi   |    5/27     |         Finished Section 1&2             |     1.4      |
 
 ## 1. Introduction
 
@@ -59,13 +60,36 @@ Key goals:
 - Providing GMs the toolbox to manage and advertise game sessions.
 - Simplifying the match making process between GMs and Players.
 
-### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          
+### 1.3 Definitions, Acronyms and Abbreviations                                                                                           
+Java - A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build Class Connect.
+
+Postgresql - Open-source relational database management system.
+
+SpringBoot - An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.
+
+Spring MVC - Model-View-Controller. This is the architectural pattern that will be used to implement our system.
+
+Spring Web - Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.
+
+API - Application Programming Interface. This will be used to interface the backend and the fronted of our application.
+
+HTML - Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.
+
+CSS - Cascading Style Sheets. Will be used to add styles and appearance to the web app.
+
+JavaScript - An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjuction with HTML and CSS to make the web app.
+
+VS Code - An integrated development environment (IDE) for Java. This is where our system will be created. 
 
 ### 1.4 References
-List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+https://docs.spring.io
 
 ### 1.5 Document Overview
-Describe what the rest of the document contains and how it is organized.
+This document outlines the software requirements for the D&D Group Finder application.
+
+Section 2 provides a general overview of the product, including its purpose, functions, constraints, user characteristics, and assumptions.
+
+Section 3 contains detailed functional and non-functional requirements that define how the system will behave. 
 
 ## 2. Product Overview
 The D&D Group Finder is a web-based application designed to connect Dungeons and Dragons Game Masters with interested players. The product aims to simplify the process of finding, joining, and managing D&D games through ha centralized platform. By providing a user-friendly interface and features tailored to both GMs and Players, the application supports the growing need for virtual and local tabletop game.
@@ -135,7 +159,13 @@ The D&D Group Finder will be used by two primary user classes: Game Masters (GMs
    - Importance: High - they form the community that engages with the listings. 
 
 ### 2.4 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+- Users will have access to a stable internet connection and a modern web browser.
+- The application will be hosted on a server or cloud platform that supports Java.
+- All  third party libraries (e.g., Spring Booth, and basic frontend technologies.
+- The development tema is familiar with Java, Spring Boot, and basic frontend Technologies.
+- Future scalability depends on the availability of server resources and proper deployment setup.
+
+If any of these assumptions change, it may imapct development time, design decisions, or funtionality.
 
 ## 3. Requirements
 
