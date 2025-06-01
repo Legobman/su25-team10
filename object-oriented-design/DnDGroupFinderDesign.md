@@ -1,9 +1,9 @@
-# Class Connect - Software Design 
+# D&D Group Finder - Software Design 
 
 Version 1  
-Prepared by Alice Beback\
-Class Connect\
-May 27, 2025
+Prepared by Matthew Berwick & Arodi Kapuadi\
+D&D Group Finder\
+June 1, 2025
 
 Table of Contents
 =================
