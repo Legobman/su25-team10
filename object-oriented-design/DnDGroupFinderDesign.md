@@ -12,8 +12,8 @@ Table of Contents
 * 2 [Use Cases](#2-use-cases)
   * 2.1 [Use Case Model](#21-use-case-model)
   * 2.2 [Use Case Descriptions](#22-use-case-descriptions)
-    * 2.2.1 [Actor: Teacher](#221-actor-teacher)
-    * 2.2.2 [Actor: Student](#222-actor-student) 
+    * 2.2.1 [Actor: Teacher](#221-actor-game-master)
+    * 2.2.2 [Actor: Student](#222-actor-player) 
 * 3 [UML Class Diagram](#3-uml-class-diagram)
 * 4 [Database Schema](#4-database-schema)
 
@@ -29,11 +29,11 @@ Class Connect is a simple, comprehensive, easy to use web app with the goal of p
 
 ## 2. Use Cases
 ### 2.1 Use Case Model
-![Use Case Model](https://github.com/uncg-csc340/su25-team0/blob/main/object-oriented-design/use-case-model.png)
+![Use Case Model](https://github.com/Legobman/su25-team10/blob/main/object-oriented-design/use-case-model.jpg)
 
 ### 2.2 Use Case Descriptions
 
-#### 2.2.1 Actor: Teacher
+#### 2.2.1 Actor: Game Master
 ##### 2.2.1.1 Sign Up
 A teacher can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
 ##### 2.2.1.2 Log In
@@ -45,7 +45,7 @@ The teacher shall be able to create a new class listing. They would provide a cl
 ##### 2.2.1.4 Manage Class Content
 A teacher shall be able to add and remove class assignments and announcements, as well as assign grades to their students.
 
-#### 2.2.2 Actor: Student
+#### 2.2.2 Actor: Player
 ##### 2.2.2.1 Sign Up
 A student can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
 ##### 2.2.2.2 Log In
@@ -58,6 +58,6 @@ Upon selecting a class, a student shall be able to sign up for the class usin a 
 A student may drop/unregister for a class from the class page.
 
 ## 3. UML Class Diagram
-![UML Class Diagram](https://github.com/uncg-csc340/su25-team0/blob/main/object-oriented-design/class-diagram.png)
+![UML Class Diagram](https://github.com/Legobman/su25-team10/blob/main/object-oriented-design/class-diagram.png)
 ## 4. Database Schema
-![UML Class Diagram](https://github.com/uncg-csc340/su25-team0/blob/main/object-oriented-design/database-schema.png)
+![UML Class Diagram](https://github.com/Legobman/su25-team10/blob/main/object-oriented-design/database-schema.png)
