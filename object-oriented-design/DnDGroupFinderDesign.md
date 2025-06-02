@@ -21,7 +21,7 @@ Table of Contents
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
 |  Al  | 5/27    | Initial Design      |    1      |
-|      |         |                     |           |
+| Matt | 6/1     | Provder use-cases   | 1.1       |
 |      |         |                     |           |
 
 ## 1. Product Overview
