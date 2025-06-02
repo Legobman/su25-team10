@@ -25,7 +25,7 @@ Table of Contents
 |      |         |                     |           |
 
 ## 1. Product Overview
-Class Connect is a simple, comprehensive, easy to use web app with the goal of providing classes to students in various fields. Students and teachers make use of the centralized platform to meet their needs. Teachers create and publish classes, students sign up for any available classes that they are interested in.
+The D&D Group Finder is a web-based application designed to connect Dungeons and Dragons Game Masters with interested players. The product aims to simplify the process of finding, joining, and managing D&D games through ha centralized platform. By providing a user-friendly interface and features tailored to both GMs and Players, the application supports the growing need for virtual and local tabletop game.
 
 ## 2. Use Cases
 ### 2.1 Use Case Model
