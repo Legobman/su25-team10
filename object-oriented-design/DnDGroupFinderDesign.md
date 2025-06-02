@@ -35,15 +35,19 @@ The D&D Group Finder is a web-based application designed to connect Dungeons and
 
 #### 2.2.1 Actor: Game Master
 ##### 2.2.1.1 Sign Up
-A teacher can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
+A Game master can sign up to create their profile with their name, email, password. Emails must be unique.
 ##### 2.2.1.2 Log In
-A teacher shall be able to sign in using their registred email and password. After logging in, the teacher shall be directed their dashboard where they see an overview of their classes and stats.
+A Game master shall be able to sign in using their registred email and password. After logging in, the Game master shall be directed their homepage where they see an overview of their game groups and reviews.
 ##### 2.2.1.3 Update Profile
-A teacher shall be to modify their profile by going to their profile page. They can change their email, password, profile picture, and biography.
-##### 2.2.1.4 Create Class
-The teacher shall be able to create a new class listing. They would provide a class name, code, description, and schedule. This class will be created to be associated with only this teacher.
-##### 2.2.1.4 Manage Class Content
-A teacher shall be able to add and remove class assignments and announcements, as well as assign grades to their students.
+A Game master shall be to modify their profile by going to their profile page. They can change their email and password.
+##### 2.2.1.4 Create Game Group
+A Game master shall be able to create a new game group. They would provide the location, day of the week, start/end times, number of player slots, and description. The game group will be created to be associated with only this game master.
+##### 2.2.1.5 Edit Game Group
+A Game master shall be able to reenter the information about the game group in order to change any details that are different.
+##### 2.2.1.6 Delete Game Group
+A Game master shall be able to delete one of their game groups, this should also delete any attached player membership ojects that are attached to the game group.
+##### 2.2.1.7 Respond to Reviews
+A Game master shall be able to see and react to the reviews about them left by players.
 
 #### 2.2.2 Actor: Player
 ##### 2.2.2.1 Sign Up
