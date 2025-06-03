@@ -1,6 +1,5 @@
 package csc340Team10.DnDGroupFinder.gamegroup;
 
-import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -28,9 +27,9 @@ public class GameGroup {
     @NonNull
     private String location;
     @NonNull
-    private Date startTime;
+    private String startTime;
     @NonNull
-    private Date endTime;
+    private String endTime;
     @NonNull
     private int playerSlots;
     @NonNull
@@ -47,7 +46,7 @@ public class GameGroup {
     public GameGroup() {
     }
 
-    public GameGroup(String description, Date endTime, Long groupID, String location, int playerSlots, Date startTime, GameMaster gameMaster) {
+    public GameGroup(String description, String endTime, Long groupID, String location, int playerSlots, String startTime, GameMaster gameMaster) {
         this.description = description;
         this.endTime = endTime;
         this.groupID = groupID;
@@ -57,7 +56,7 @@ public class GameGroup {
         this.gameMaster = gameMaster;
     }
 
-    public GameGroup(String description, Date endTime, String location, int playerSlots, Date startTime, GameMaster gameMaster) {
+    public GameGroup(String description, String endTime, String location, int playerSlots, String startTime, GameMaster gameMaster) {
         this.description = description;
         this.endTime = endTime;
         this.location = location;
@@ -66,7 +65,7 @@ public class GameGroup {
         this.gameMaster = gameMaster;
     }
 
-    public GameGroup(Long groupID, String location, Date startTime, Date endTime, int playerSlots, String description,
+    public GameGroup(Long groupID, String location, String startTime, String endTime, int playerSlots, String description,
             GameMaster gameMaster, List<GroupMembership> groupMemberships) {
         this.groupID = groupID;
         this.location = location;
@@ -94,19 +93,19 @@ public class GameGroup {
         this.location = location;
     }
 
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

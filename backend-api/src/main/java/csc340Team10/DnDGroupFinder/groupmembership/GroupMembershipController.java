@@ -41,6 +41,12 @@ public class GroupMembershipController {
         return groupMembershipService.getAllMemberships();
     }
 
+    @DeleteMapping("/memberships/{groupid}/{playerid}")
+    public Object kickPlayer(@PathVariable Long groupid, @PathVariable Long playerid) {
+        groupMembershipService.kickPlayer(groupid, playerid);
+        return groupMembershipService.getAllMemberships();
+    }
+
     @PostMapping("/memberships/writeFile")
     public Object writeJson(@RequestBody GroupMembership membership) {
         groupMembershipService.writeJson(membership);
