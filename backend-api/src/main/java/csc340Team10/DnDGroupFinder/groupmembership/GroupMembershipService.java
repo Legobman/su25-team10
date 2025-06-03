@@ -34,6 +34,10 @@ public class GroupMembershipService {
         groupMembershipRepository.deleteById(membershipID);
     }
 
+    public void kickPlayer(long playerID, long groupID) {
+        groupMembershipRepository.kickPlayer(playerID, groupID);
+    }
+
     public String writeJson(GroupMembership membership) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
