@@ -94,4 +94,12 @@ public class GameMaster {
     public void setGamegroups(List<GameGroup> gamegroups) {
         this.gamegroups = gamegroups;
     }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }

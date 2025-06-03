@@ -30,7 +30,7 @@ public class Player {
     @NonNull
     private String password;
     @OneToMany(mappedBy = "player")
-    @JsonIgnoreProperties("players")
+    @JsonIgnoreProperties("player")
     private List<GroupMembership> groupMemberships;
 
     public Player() {
