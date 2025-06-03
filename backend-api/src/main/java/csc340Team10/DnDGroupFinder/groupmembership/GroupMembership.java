@@ -31,13 +31,15 @@ public class GroupMembership {
     public GroupMembership() {
     }
 
-    public GroupMembership(GameGroup gamegroup, Long membershipID) {
+    public GroupMembership(GameGroup gamegroup, Long membershipID, Player player) {
         this.gamegroup = gamegroup;
         this.membershipID = membershipID;
+        this.player = player;
     }
 
-    public GroupMembership(GameGroup gamegroup) {
+    public GroupMembership(GameGroup gamegroup, Player player) {
         this.gamegroup = gamegroup;
+        this.player = player;
     }
 
     public Long getMembershipID() {

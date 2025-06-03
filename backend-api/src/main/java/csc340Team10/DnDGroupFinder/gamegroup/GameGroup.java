@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -38,7 +39,7 @@ public class GameGroup {
     @JoinColumn(name = "GMID", nullable = false)
     @JsonIgnoreProperties("gamegroups")
     private GameMaster gameMaster;
-    @ManyToOne()
+    @OneToMany()
     @JoinColumn(name = "groupMembershipID", nullable = false)
     @JsonIgnoreProperties("gamegroups")
     private List<GroupMembership> groupMemberships;
