@@ -18,6 +18,7 @@ import jakarta.persistence.Table;
 @Table(name = "gamemasters") 
 public class GameMaster {
     @Id
+    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long GMID;
     @NonNull
@@ -29,7 +30,7 @@ public class GameMaster {
     @NonNull
     private String password;
 
-    @OneToMany(mappedBy = "gamemasters")
+    @OneToMany(mappedBy = "gameMaster")
     @JsonIgnoreProperties("gamemasters")
     private List<GameGroup> gamegroups;
 
