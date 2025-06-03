@@ -55,5 +55,10 @@ public class GameGroupService {
             return null;
         }
 
+    
+    }
+    public Object searchGameGroup (String term){
+        return gameGroupRepository.searchGameGroup(term);
+
     }
 }

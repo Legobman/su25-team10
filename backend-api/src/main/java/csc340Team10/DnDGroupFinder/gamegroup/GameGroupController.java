@@ -24,6 +24,11 @@ public class GameGroupController {
         return gameGroupService.getGameGroupsById(id);
     }
 
+     @GetMapping("/gamegroups/search/{term}")
+    public Object searchGameGroup(@PathVariable String term) {
+        return gameGroupService.searchGameGroup(term);
+    }
+    
     @PostMapping("/gamegroups")
     public Object addGameGroup(@RequestBody GameGroup gameGroup) {
         return gameGroupService.addGameGroup(gameGroup);
