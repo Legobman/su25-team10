@@ -24,6 +24,11 @@ public class GroupMembershipController {
         return groupMembershipService.getMembershipsById(id);
     }
 
+    @GetMapping("/memberships/find/{playerid}")
+    public Object findPlayerGroups(@PathVariable Long playerid) {
+        return groupMembershipService.findPlayerGroups(playerid);
+    }
+
     @PostMapping("/memberships")
     public Object addMembership(@RequestBody GroupMembership membership) {
         return groupMembershipService.addMembership(membership);

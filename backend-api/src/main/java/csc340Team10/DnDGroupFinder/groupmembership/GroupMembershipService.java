@@ -26,6 +26,10 @@ public class GroupMembershipService {
         return groupMembershipRepository.save(membership);
     }
 
+    public Object findPlayerGroups(long playerID) {
+        return groupMembershipRepository.findPlayerGroups(playerID);
+    }
+
     public GroupMembership updateMembership(Long membershipID, GroupMembership membership) {
         return groupMembershipRepository.save(membership);
     }
@@ -34,8 +38,8 @@ public class GroupMembershipService {
         groupMembershipRepository.deleteById(membershipID);
     }
 
-    public void kickPlayer(long playerID, long groupID) {
-        groupMembershipRepository.kickPlayer(playerID, groupID);
+    public void kickPlayer(long groupID, long playerID) {
+        groupMembershipRepository.kickPlayer(groupID, playerID);
     }
 
     public String writeJson(GroupMembership membership) {
