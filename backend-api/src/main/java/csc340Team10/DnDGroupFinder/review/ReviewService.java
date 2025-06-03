@@ -41,7 +41,7 @@ public class ReviewService {
             return "Review written to JSON file successfully";
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error writing turtle to JSON file";
+            return "Error writing review to JSON file";
         }
     }
 

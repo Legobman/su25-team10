@@ -42,7 +42,7 @@ public class GameMasterService {
             return "Game Master written to JSON file successfully";
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error writing turtle to JSON file";
+            return "Error writing game master to JSON file";
         }
     }
 
