@@ -1,10 +1,12 @@
 package csc340Team10.DnDGroupFinder.gamegroup;
 
 import java.util.Date;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import csc340Team10.DnDGroupFinder.gamemaster.GameMaster;
+import csc340Team10.DnDGroupFinder.groupmembership.GroupMembership;
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,6 +38,10 @@ public class GameGroup {
     @JoinColumn(name = "GMID", nullable = false)
     @JsonIgnoreProperties("gamegroups")
     private GameMaster gameMaster;
+    @ManyToOne()
+    @JoinColumn(name = "groupMembershipID", nullable = false)
+    @JsonIgnoreProperties("gamegroups")
+    private List<GroupMembership> groupMemberships;
 
     public GameGroup() {
     }
@@ -114,4 +120,13 @@ public class GameGroup {
     public void setGameMaster(GameMaster gameMaster) {
         this.gameMaster = gameMaster;
     }
+
+    public List<GroupMembership> getGroupMemberships() {
+        return groupMemberships;
+    }
+
+    public void setGroupMemberships(List<GroupMembership> groupMemberships) {
+        this.groupMemberships = groupMemberships;
+    }
+    
 }
