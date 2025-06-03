@@ -3,6 +3,7 @@ package csc340Team10.DnDGroupFinder.groupmembership;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import csc340Team10.DnDGroupFinder.gamegroup.GameGroup;
+import csc340Team10.DnDGroupFinder.player.Player;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +22,11 @@ public class GroupMembership {
     @JoinColumn(name = "groupID", nullable = false)
     @JsonIgnoreProperties("groupmemberships")
     private GameGroup gamegroup;
+
+    @ManyToOne()
+    @JoinColumn(name = "playerID", nullable = false)
+    @JsonIgnoreProperties("groupmemberships")
+    private Player player;
 
     public GroupMembership() {
     }
@@ -48,6 +54,14 @@ public class GroupMembership {
 
     public void setGamegroup(GameGroup gamegroup) {
         this.gamegroup = gamegroup;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     
