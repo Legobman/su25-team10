@@ -1,11 +1,17 @@
 package csc340Team10.DnDGroupFinder.gamemaster;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import csc340Team10.DnDGroupFinder.gamegroup.GameGroup;
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +28,10 @@ public class GameMaster {
     private String username;
     @NonNull
     private String password;
+
+    @OneToMany(mappedBy = "gamemasters")
+    @JsonIgnoreProperties("gamemasters")
+    private List<GameGroup> gamegroups;
 
     public GameMaster() {
     }
@@ -69,5 +79,13 @@ public class GameMaster {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<GameGroup> getGamegroups() {
+        return gamegroups;
+    }
+
+    public void setGamegroups(List<GameGroup> gamegroups) {
+        this.gamegroups = gamegroups;
     }
 }
