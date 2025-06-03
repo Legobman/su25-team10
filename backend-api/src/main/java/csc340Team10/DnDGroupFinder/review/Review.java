@@ -83,5 +83,13 @@ public class Review {
         this.gameMaster = gameMaster;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
 
 }

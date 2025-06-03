@@ -32,11 +32,11 @@ public class GameMaster {
     private String password;
 
     @OneToMany(mappedBy = "gameMaster")
-    @JsonIgnoreProperties("gamemasters")
+    @JsonIgnoreProperties("gameMaster")
     private List<GameGroup> gamegroups;
 
     @OneToMany(mappedBy = "gameMaster")
-    @JsonIgnoreProperties("gamemasters")
+    @JsonIgnoreProperties("gameMaster")
     private List<Review> reviews;
 
     public GameMaster() {
