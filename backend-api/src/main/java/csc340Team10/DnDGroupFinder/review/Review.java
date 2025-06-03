@@ -51,6 +51,13 @@ public class Review {
         this.response = response;
     }
 
+    public Review(Long reviewID, String rating, GameMaster gameMaster, Player player) {
+        this.reviewID = reviewID;
+        this.rating = rating;
+        this.gameMaster = gameMaster;
+        this.player = player;
+    }
+
     public Long getReviewID() {
         return reviewID;
     }
