@@ -3,6 +3,7 @@ package csc340Team10.DnDGroupFinder.review;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import csc340Team10.DnDGroupFinder.gamemaster.GameMaster;
+import csc340Team10.DnDGroupFinder.player.Player;
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,20 +25,27 @@ public class Review {
     private String response;
     @ManyToOne()
     @JoinColumn(name = "GMID", nullable = false)
-    @JsonIgnoreProperties("gamegroups")
+    @JsonIgnoreProperties("reviews")
     private GameMaster gameMaster;
+
+    @ManyToOne()
+    @JoinColumn(name = "playerID", nullable = false)
+    @JsonIgnoreProperties("reviews")
+    private Player player;
 
     public Review() {
     }
 
-    public Review(GameMaster gameMaster, String rating, String response, Long reviewID) {
+    public Review(Player player, GameMaster gameMaster, String rating, String response, Long reviewID) {
+        this.player = player;
         this.gameMaster = gameMaster;
         this.rating = rating;
         this.response = response;
         this.reviewID = reviewID;
     }
 
-    public Review(GameMaster gameMaster, String rating, String response) {
+    public Review(Player player, GameMaster gameMaster, String rating, String response) {
+        this.player = player;
         this.gameMaster = gameMaster;
         this.rating = rating;
         this.response = response;

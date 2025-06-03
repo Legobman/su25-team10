@@ -5,6 +5,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import csc340Team10.DnDGroupFinder.gamegroup.GameGroup;
+import csc340Team10.DnDGroupFinder.review.Review;
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,6 +34,10 @@ public class GameMaster {
     @OneToMany(mappedBy = "gameMaster")
     @JsonIgnoreProperties("gamemasters")
     private List<GameGroup> gamegroups;
+
+    @OneToMany(mappedBy = "gameMaster")
+    @JsonIgnoreProperties("gamemasters")
+    private List<Review> reviews;
 
     public GameMaster() {
     }
