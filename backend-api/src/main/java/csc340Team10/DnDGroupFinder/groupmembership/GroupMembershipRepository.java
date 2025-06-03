@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 public interface GroupMembershipRepository extends JpaRepository<GroupMembership, Long>{
 
     @Query(value = "delete from groupmemberships gms where gms.playerID = ?1 and gms.groupID = ?1", nativeQuery = true)
-    List<GroupMembership> kickPlayer(long playerID, long groupID);
+    List<GroupMembership> kickPlayer(long groupID, long playerID);
+
+    @Query(value = "select * from groupmemberships gms where gms.playerID = ?1", nativeQuery = true)
+    List<GroupMembership> findPlayerGroups(long playerID);
 
 }
