@@ -55,6 +55,24 @@ public class GameMaster {
         this.password = password;
     }
 
+    public GameMaster(Long gMID, String email, String username, String password, List<GameGroup> gamegroups,
+            List<Review> reviews) {
+        this.GMID = gMID;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.gamegroups = gamegroups;
+        this.reviews = reviews;
+    }
+
+    public GameMaster(Long gMID, String email, String username, String password, List<GameGroup> gamegroups) {
+        this.GMID = gMID;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.gamegroups = gamegroups;
+    }
+
     public Long getGMID() {
         return GMID;
     }

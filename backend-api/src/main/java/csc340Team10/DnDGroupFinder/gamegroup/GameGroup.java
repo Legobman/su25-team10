@@ -66,6 +66,18 @@ public class GameGroup {
         this.gameMaster = gameMaster;
     }
 
+    public GameGroup(Long groupID, String location, Date startTime, Date endTime, int playerSlots, String description,
+            GameMaster gameMaster, List<GroupMembership> groupMemberships) {
+        this.groupID = groupID;
+        this.location = location;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.playerSlots = playerSlots;
+        this.description = description;
+        this.gameMaster = gameMaster;
+        this.groupMemberships = groupMemberships;
+    }
+
     public Long getGroupID() {
         return groupID;
     }

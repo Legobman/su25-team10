@@ -53,6 +53,27 @@ public class Player {
         this.password = password;
         this.username = username;
     }
+    
+
+    public Player(Long playerID, String email, String username, String password, List<GroupMembership> groupMemberships,
+            List<Review> reviews) {
+        this.playerID = playerID;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.groupMemberships = groupMemberships;
+        this.reviews = reviews;
+    }
+    
+
+    public Player(Long playerID, String email, String username, String password,
+            List<GroupMembership> groupMemberships) {
+        this.playerID = playerID;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.groupMemberships = groupMemberships;
+    }
 
     public Long getPlayerID() {
         return playerID;
