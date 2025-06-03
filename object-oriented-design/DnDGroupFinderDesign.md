@@ -22,7 +22,7 @@ Table of Contents
 | ---- | ------- | ------------------- | --------- |
 |  Al  | 5/27    | Initial Design      |    1      |
 | Matt | 6/1     | Provder use-cases   | 1.1       |
-|      |         |                     |           |
+| Arodi| 6/3     | Player Use cases    |   1.2     |
 
 ## 1. Product Overview
 The D&D Group Finder is a web-based application designed to connect Dungeons and Dragons Game Masters with interested players. The product aims to simplify the process of finding, joining, and managing D&D games through ha centralized platform. By providing a user-friendly interface and features tailored to both GMs and Players, the application supports the growing need for virtual and local tabletop game.
@@ -51,15 +51,19 @@ A Game master shall be able to see and react to the reviews about them left by p
 
 #### 2.2.2 Actor: Player
 ##### 2.2.2.1 Sign Up
-A student can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
+A player can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
 ##### 2.2.2.2 Log In
-A teacher shall be able to sign in using their registred email and password. After logging in, the student shall be directed their dashboard where they see an overview of their classes and stats.
-##### 2.2.2.3 Browse Classes
-A student shall be able to view available classes. They can do this from the home page or using a search function. They can also filter classes by name, subject, or teacher. They will also be able to select one class and view more details.
-##### 2.2.1.4 Sign Up for Class
-Upon selecting a class, a student shall be able to sign up for the class usin a one-click action. This class will then appear on their dashboard, and they will be able to participate in the class.
-##### 2.2.1.5 Drop Class
-A student may drop/unregister for a class from the class page.
+A gamemaster shall be able to assign in using their registred email and password. After logging in, the player shall be directed their homepage where they see an overview of their games and groups.
+##### 2.2.2.3 Browse Gamegroups
+A player shall be able to view available gamegroups. They can do this from the home page or using a search function. They can also filter gamegroups by discription, location. They will also be able to select one gamegroup and view more details.
+##### 2.2.1.4 Join Up for Game Groups
+Upon selecting a gamegroup, a player shall be able to join up for the gamegroup usin a one-click action. This gamegroup will then appear on their dashboard, and they will be able to play in the game group.
+##### 2.2.1.5 Leave Gamegroup
+A player may drop/leave a gamegroup from the page.
+###### 2.2.1.6 Update Profile
+A player will be able to update theri profile by going to their profile page. They can change email and password.
+###### 2.2.1.7 Leave a Review
+A player will be able to leave a  review about their experience. 
 
 ## 3. UML Class Diagram
 ![UML Class Diagram](https://github.com/Legobman/su25-team10/blob/main/object-oriented-design/class-diagram.png)
