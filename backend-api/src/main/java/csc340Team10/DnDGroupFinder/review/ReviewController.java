@@ -24,6 +24,11 @@ public class ReviewController {
         return reviewService.getReviewsById(id);
     }
 
+    @GetMapping("/reviews/search/{id}")
+    public Object findYourReviews(@PathVariable long id) {
+        return reviewService.findYourReviews(id);
+    }
+
     @PostMapping("/reviews")
     public Object addReview(@RequestBody Review review) {
         return reviewService.addReview(review);
