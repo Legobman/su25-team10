@@ -24,7 +24,7 @@ public class GameGroupController {
         return gameGroupService.getGameGroupsById(id);
     }
 
-     @GetMapping("/gamegroups/search/{term}")
+    @GetMapping("/gamegroups/search/{term}")
     public Object searchGameGroup(@PathVariable String term) {
         return gameGroupService.searchGameGroup(term);
     }

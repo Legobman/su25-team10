@@ -22,6 +22,10 @@ public class ReviewService {
         return reviewRepository.findById(reviewID).orElse(null);
     }
 
+    public Object findYourReviews(long GMID) {
+        return reviewRepository.findYourReviews(GMID);
+    }
+
     public Review addReview(Review review) {
         return reviewRepository.save(review);
     }
