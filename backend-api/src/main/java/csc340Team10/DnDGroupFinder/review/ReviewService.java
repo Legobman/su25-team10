@@ -31,7 +31,10 @@ public class ReviewService {
     }
 
     public Review updateReview(Long reviewID, Review review) {
-        return reviewRepository.save(review);
+        Review existingReview = getReviewsById(reviewID);
+        existingReview.setResponse(review.getResponse());
+
+        return reviewRepository.save(existingReview);
     }
 
     public void deleteReview(Long reviewID) {
