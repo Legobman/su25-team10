@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import csc340Team10.DnDGroupFinder.gamemaster.GameMaster;
 import csc340Team10.DnDGroupFinder.player.Player;
-import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,18 +18,16 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewID;
-    @NonNull
     private String rating;
-    @NonNull
     private String response;
     @ManyToOne()
     @JoinColumn(name = "GMID", nullable = false)
-    @JsonIgnoreProperties("reviews")
+    @JsonIgnoreProperties({"reviews", "gamegroups"})
     private GameMaster gameMaster;
 
     @ManyToOne()
     @JoinColumn(name = "playerID", nullable = false)
-    @JsonIgnoreProperties("reviews")
+    @JsonIgnoreProperties({"reviews","groupMemberships"})
     private Player player;
 
     public Review() {
@@ -44,6 +41,13 @@ public class Review {
         this.reviewID = reviewID;
     }
 
+    public Review(Long reviewID, String response, GameMaster gameMaster, Player player) {
+        this.reviewID = reviewID;
+        this.response = response;
+        this.gameMaster = gameMaster;
+        this.player = player;
+    }
+
     public Review(Player player, GameMaster gameMaster, String rating, String response) {
         this.player = player;
         this.gameMaster = gameMaster;
@@ -51,12 +55,6 @@ public class Review {
         this.response = response;
     }
 
-    public Review(Long reviewID, String rating, GameMaster gameMaster, Player player) {
-        this.reviewID = reviewID;
-        this.rating = rating;
-        this.gameMaster = gameMaster;
-        this.player = player;
-    }
 
     public Long getReviewID() {
         return reviewID;

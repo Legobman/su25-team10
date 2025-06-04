@@ -31,23 +31,26 @@ public class GameGroup {
     @NonNull
     private String endTime;
     @NonNull
+    private String dayOfWeek;
+    @NonNull
     private int playerSlots;
     @NonNull
     private String description;
     @ManyToOne()
     @JoinColumn(name = "GMID", nullable = false)
-    @JsonIgnoreProperties("gamegroups")
+    @JsonIgnoreProperties({"gamegroups", "reviews"})
     private GameMaster gameMaster;
     @OneToMany()
     @JoinColumn(name = "groupMembershipID", nullable = false)
-    @JsonIgnoreProperties("gamegroups")
+    @JsonIgnoreProperties({"gamegroup", "player"})
     private List<GroupMembership> groupMemberships;
 
     public GameGroup() {
     }
 
-    public GameGroup(String description, String endTime, Long groupID, String location, int playerSlots, String startTime, GameMaster gameMaster) {
+    public GameGroup(String description, String dayOfWeek, String endTime, Long groupID, String location, int playerSlots, String startTime, GameMaster gameMaster) {
         this.description = description;
+        this.dayOfWeek = dayOfWeek;
         this.endTime = endTime;
         this.groupID = groupID;
         this.location = location;
@@ -56,8 +59,9 @@ public class GameGroup {
         this.gameMaster = gameMaster;
     }
 
-    public GameGroup(String description, String endTime, String location, int playerSlots, String startTime, GameMaster gameMaster) {
+    public GameGroup(String description, String dayOfWeek, String endTime, String location, int playerSlots, String startTime, GameMaster gameMaster) {
         this.description = description;
+        this.dayOfWeek = dayOfWeek;
         this.endTime = endTime;
         this.location = location;
         this.playerSlots = playerSlots;
@@ -65,9 +69,10 @@ public class GameGroup {
         this.gameMaster = gameMaster;
     }
 
-    public GameGroup(Long groupID, String location, String startTime, String endTime, int playerSlots, String description,
+    public GameGroup(Long groupID, String dayOfWeek, String location, String startTime, String endTime, int playerSlots, String description,
             GameMaster gameMaster, List<GroupMembership> groupMemberships) {
         this.groupID = groupID;
+        this.dayOfWeek = dayOfWeek;
         this.location = location;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -139,6 +144,14 @@ public class GameGroup {
 
     public void setGroupMemberships(List<GroupMembership> groupMemberships) {
         this.groupMemberships = groupMemberships;
+    }
+
+    public String getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
     
 }
