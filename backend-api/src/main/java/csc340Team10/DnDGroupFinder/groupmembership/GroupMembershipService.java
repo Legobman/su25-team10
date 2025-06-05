@@ -18,7 +18,7 @@ public class GroupMembershipService {
         return groupMembershipRepository.findAll();
     }
 
-    public GroupMembership getMembershipsById(@PathVariable long membershipID) {
+    public GroupMembership getMembershipById(@PathVariable long membershipID) {
         return groupMembershipRepository.findById(membershipID).orElse(null);
     }
 

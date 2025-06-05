@@ -20,8 +20,8 @@ public class PlayerController {
     }
 
     @GetMapping("/players/{id}")
-    public Player getPlayersById(@PathVariable long id) {
-        return playerService.getPlayersById(id);
+    public Player getPlayerById(@PathVariable long id) {
+        return playerService.getPlayerById(id);
     }
 
     @PostMapping("/players")
@@ -32,7 +32,7 @@ public class PlayerController {
     @PutMapping("/players/{id}")
     public Player updatePlayer(@PathVariable Long id, @RequestBody Player player) {
         playerService.updatePlayer(id, player);
-        return playerService.getPlayersById(id);
+        return playerService.getPlayerById(id);
     }
 
     @DeleteMapping("/players/{id}")
