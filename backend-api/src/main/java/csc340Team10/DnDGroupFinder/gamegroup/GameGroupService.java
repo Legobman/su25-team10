@@ -19,7 +19,7 @@ public class GameGroupService {
         return gameGroupRepository.findAll();
     }
 
-    public GameGroup getGameGroupsById(@PathVariable long groupID) {
+    public GameGroup getGameGroupById(@PathVariable long groupID) {
         return gameGroupRepository.findById(groupID).orElse(null);
     }
 

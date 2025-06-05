@@ -21,8 +21,8 @@ public class GameMasterController {
     }
 
     @GetMapping("/gamemasters/{id}")
-    public GameMaster getGameMastersById(@PathVariable long id) {
-        return gameMasterService.getGameMastersById(id);
+    public GameMaster getGameMasterById(@PathVariable long id) {
+        return gameMasterService.getGameMasterById(id);
     }
 
     @PostMapping("/gamemasters")
@@ -33,7 +33,7 @@ public class GameMasterController {
     @PutMapping("/gamemasters/{id}")
     public GameMaster updateGameMaster(@PathVariable Long id, @RequestBody GameMaster gameMaster) {
         gameMasterService.updateGameMaster(id, gameMaster);
-        return gameMasterService.getGameMastersById(id);
+        return gameMasterService.getGameMasterById(id);
     }
 
     @DeleteMapping("/gamemasters/{id}")

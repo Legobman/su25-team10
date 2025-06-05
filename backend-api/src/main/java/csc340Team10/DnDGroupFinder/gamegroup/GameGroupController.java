@@ -20,8 +20,8 @@ public class GameGroupController {
     }
 
     @GetMapping("/gamegroups/{id}")
-    public GameGroup getGameGroupsById(@PathVariable long id) {
-        return gameGroupService.getGameGroupsById(id);
+    public GameGroup getGameGroupById(@PathVariable long id) {
+        return gameGroupService.getGameGroupById(id);
     }
 
     @GetMapping("/gamegroups/search/{term}")
@@ -37,7 +37,7 @@ public class GameGroupController {
     @PutMapping("/gamegroups/{id}")
     public GameGroup updateGameGroup(@PathVariable Long id, @RequestBody GameGroup gameGroup) {
         gameGroupService.updateGameGroup(id, gameGroup);
-        return gameGroupService.getGameGroupsById(id);
+        return gameGroupService.getGameGroupById(id);
     }
 
     @DeleteMapping("/gamegroups/{id}")

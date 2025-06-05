@@ -19,7 +19,7 @@ public class PlayerService {
         return playerRepository.findAll();
     }
 
-    public Player getPlayersById(@PathVariable long playerID) {
+    public Player getPlayerById(@PathVariable long playerID) {
         return playerRepository.findById(playerID).orElse(null);
     }
 

@@ -20,8 +20,8 @@ public class GroupMembershipController {
     }
 
     @GetMapping("/memberships/{id}")
-    public GroupMembership getMembershipsById(@PathVariable long id) {
-        return groupMembershipService.getMembershipsById(id);
+    public GroupMembership getMembershipById(@PathVariable long id) {
+        return groupMembershipService.getMembershipById(id);
     }
 
     @GetMapping("/memberships/find/{playerid}")
@@ -37,7 +37,7 @@ public class GroupMembershipController {
     @PutMapping("/memberships/{id}")
     public GroupMembership updateMembership(@PathVariable Long id, @RequestBody GroupMembership membership) {
         groupMembershipService.updateMembership(id, membership);
-        return groupMembershipService.getMembershipsById(id);
+        return groupMembershipService.getMembershipById(id);
     }
 
     @DeleteMapping("/memberships/{id}")

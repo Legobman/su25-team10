@@ -19,7 +19,7 @@ public class GameMasterService {
         return gameMasterRepository.findAll();
     }
 
-    public GameMaster getGameMastersById(@PathVariable long GMID) {
+    public GameMaster getGameMasterById(@PathVariable long GMID) {
         return gameMasterRepository.findById(GMID).orElse(null);
     }
 

@@ -18,7 +18,7 @@ public class ReviewService {
         return reviewRepository.findAll();
     }
 
-    public Review getReviewsById(@PathVariable long reviewID) {
+    public Review getReviewById(@PathVariable long reviewID) {
         return reviewRepository.findById(reviewID).orElse(null);
     }
 
@@ -31,7 +31,7 @@ public class ReviewService {
     }
 
     public Review updateReview(Long reviewID, Review review) {
-        Review existingReview = getReviewsById(reviewID);
+        Review existingReview = getReviewById(reviewID);
         existingReview.setResponse(review.getResponse());
 
         return reviewRepository.save(existingReview);

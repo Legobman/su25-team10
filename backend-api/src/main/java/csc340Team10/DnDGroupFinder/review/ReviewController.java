@@ -20,8 +20,8 @@ public class ReviewController {
     }
 
     @GetMapping("/reviews/{id}")
-    public Review getReviewsById(@PathVariable long id) {
-        return reviewService.getReviewsById(id);
+    public Review getReviewById(@PathVariable long id) {
+        return reviewService.getReviewById(id);
     }
 
     @GetMapping("/reviews/search/{id}")
@@ -37,7 +37,7 @@ public class ReviewController {
     @PutMapping("/reviews/{id}")
     public Review updateReview(@PathVariable Long id, @RequestBody Review review) {
         reviewService.updateReview(id, review);
-        return reviewService.getReviewsById(id);
+        return reviewService.getReviewById(id);
     }
 
     @DeleteMapping("/reviews/{id}")
