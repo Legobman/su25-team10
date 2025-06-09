@@ -25,7 +25,7 @@ public class GroupMembership {
 
     @ManyToOne()
     @JoinColumn(name = "playerID", nullable = false)
-    @JsonIgnoreProperties("groupmemberships")
+    @JsonIgnoreProperties({"groupmemberships"})
     private Player player;
 
     public GroupMembership() {

@@ -11,4 +11,6 @@ public interface GameGroupRepository extends JpaRepository<GameGroup, Long>{
 @Query(value = "select * from gamegroups g where g.description LIKE %?1%", nativeQuery = true)
     List<GameGroup> searchGameGroup(String term);
 
+
 }
+
