@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Game Master Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="high-fidelity-prototype\styles.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
   </head>
   <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">D&D Group Finder</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="#">Player Login</a>
-          <a class="nav-link" href="gamemaster-login.html">Game Master Login</a>
+          <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
         </div>
       </div>
@@ -28,13 +27,13 @@
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
             <h3>Game Master Login</h3>
-            <form id="new-gm" action="/gamemaster/homepage" method="post">
+            <form id="new-gm" action="/gamemasters/homepage" method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username" required><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password" minlength="8" required><br>
                 <input class="btn btn-primary" type="submit" value="Login">
-                <a href="/gamemaster/createForm" class="btn btn-secondary">Sign Up</a>
+                <a href="/gamemasters/createForm" class="btn btn-secondary">Sign Up</a>
             </form>
         </div>
       </div>

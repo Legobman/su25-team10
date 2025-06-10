@@ -41,7 +41,6 @@ public class GameGroup {
     @JsonIgnoreProperties({"gamegroups", "reviews"})
     private GameMaster gameMaster;
     @OneToMany()
-    @JoinColumn(name = "groupMembershipID", nullable = false)
     @JsonIgnoreProperties({"gamegroup", "player"})
     private List<GroupMembership> groupMemberships;
 

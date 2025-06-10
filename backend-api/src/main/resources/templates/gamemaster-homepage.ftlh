@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GM Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
     </head>
   
 <body>
@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="#">Player Login</a>
-          <a class="nav-link" href="gamemaster-login.html">Game Master Login</a>
+          <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
         </div>
       </div>
@@ -27,14 +27,15 @@
     <div class="center">
       <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-          <h3>Welcome Game Master</h3>
+          <h3>Welcome ${gamemaster.username}</h3>
           <img src="Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
           <a class="btn btn-primary" href="gamemaster-create-game-group.html">Create Game Group</a><br>
           <a class="btn btn-info" href="gamemaster-game-groups.html">View Game Groups</a><br>
           <a class="btn btn-secondary" href="gamemaster-edit-game-group.html">Edit Game Groups</a><br>
           <a class="btn btn-primary" href="gamemaster-reviews.html">View Reviews</a><br>
           <a class="btn btn-info" href="gamemaster-player-lookup.html">Player Lookup</a><br>
-          <a class="btn btn-secondary" href="gamemaster-update-profile.html">Update Profile</a>
+          <a class="btn btn-secondary" href="/gamemasters/updateForm/${gamemaster.GMID}">Update Profile</a><br>
+          <a class="btn btn-danger" href="/gamemasters/delete/${gamemaster.GMID}">Delete Profile</a>
         </div>
       </div>
     </div>
