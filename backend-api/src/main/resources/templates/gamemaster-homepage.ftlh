@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">D&D Group Finder</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,9 +28,10 @@
       <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
           <h3>Welcome ${gamemaster.username}</h3>
+          <h3>Your ID: ${gamemaster.GMID}</h3>
           <img src="Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
-          <a class="btn btn-primary" href="gamemaster-create-game-group.html">Create Game Group</a><br>
-          <a class="btn btn-info" href="gamemaster-game-groups.html">View Game Groups</a><br>
+          <a class="btn btn-primary" href="/gamegroups/createForm">Create Game Group</a><br>
+          <a class="btn btn-info" href="/gamegroups">View Game Groups</a><br>
           <a class="btn btn-secondary" href="gamemaster-edit-game-group.html">Edit Game Groups</a><br>
           <a class="btn btn-primary" href="gamemaster-reviews.html">View Reviews</a><br>
           <a class="btn btn-info" href="gamemaster-player-lookup.html">Player Lookup</a><br>
