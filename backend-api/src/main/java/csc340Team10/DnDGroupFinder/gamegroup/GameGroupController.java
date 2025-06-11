@@ -2,26 +2,36 @@ package csc340Team10.DnDGroupFinder.gamegroup;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import csc340Team10.DnDGroupFinder.gamemaster.GameMaster;
+import csc340Team10.DnDGroupFinder.gamemaster.GameMasterService;
+
 
 @Controller
 public class GameGroupController {
     @Autowired
     private GameGroupService gameGroupService;
+    @Autowired
+    private GameMasterService gameMasterService;
 
     @GetMapping("/gamegroups")
-    public Object getAllGameGroups() {
-        return gameGroupService.getAllGameGroups();
+    public Object getAllGameGroups(Model model) {
+        model.addAttribute("gameGroupList", gameGroupService.getAllGameGroups());
+        model.addAttribute("title", "All Game Groups");
+        return "gamegroups-list";
     }
 
     @GetMapping("/gamegroups/{id}")
-    public GameGroup getGameGroupById(@PathVariable long id) {
-        return gameGroupService.getGameGroupById(id);
+    public Object getGameGroupById(@PathVariable long id, Model model) {
+        model.addAttribute("gameGroup", gameGroupService.getGameGroupById(id));
+        model.addAttribute("title", "Game Group #: " + id);
+        return "gamegroups-details";
     }
 
     @GetMapping("/gamegroups/search/{term}")
@@ -29,21 +39,40 @@ public class GameGroupController {
         return gameGroupService.searchGameGroup(term);
     }
     
+    @GetMapping("/gamegroups/createForm")
+    public Object showCreateForm(Model model) {
+        GameGroup gameGroup = new GameGroup();
+        model.addAttribute("gameGroup", gameGroup);
+        model.addAttribute("title", "Create New Game Group");
+        return "gamegroups-create";
+    }
+
     @PostMapping("/gamegroups")
-    public Object addGameGroup(@RequestBody GameGroup gameGroup) {
-        return gameGroupService.addGameGroup(gameGroup);
+    public Object addGameGroup(@RequestParam("GMID") Long gmId, GameGroup gameGroup) {
+        GameMaster gm = gameMasterService.getGameMasterById(gmId);
+        gameGroup.setGameMaster(gm);
+        GameGroup newGameGroup = gameGroupService.addGameGroup(gameGroup);
+        return "redirect:/gamegroups/" + newGameGroup.getGroupID();
     }
 
-    @PutMapping("/gamegroups/{id}")
-    public GameGroup updateGameGroup(@PathVariable Long id, @RequestBody GameGroup gameGroup) {
+    @GetMapping("/gamegroups/updateForm/{id}")
+    public Object showUpdateForm(@PathVariable Long id, Model model) {
+        GameGroup gameGroup = gameGroupService.getGameGroupById(id);
+        model.addAttribute("gameGroup", gameGroup);
+        model.addAttribute("title", "Update Game Group: " + id);
+        return "gamegroups-update";
+    }
+
+    @PostMapping("/gamegroups/update/{id}")
+    public Object updateGameGroup(@PathVariable Long id, GameGroup gameGroup) {
         gameGroupService.updateGameGroup(id, gameGroup);
-        return gameGroupService.getGameGroupById(id);
+        return "redirect:/gamegroups/" + id;
     }
 
-    @DeleteMapping("/gamegroups/{id}")
+    @GetMapping("/gamegroups/delete/{id}")
     public Object deleteGameGroup(@PathVariable Long id) {
         gameGroupService.deleteGameGroup(id);
-        return gameGroupService.getAllGameGroups();
+        return "redirect:/gamegroups";
     }
 
     @PostMapping("/gamegroups/writeFile")
