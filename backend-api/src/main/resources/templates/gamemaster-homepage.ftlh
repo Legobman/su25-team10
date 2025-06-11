@@ -29,7 +29,7 @@
         <div class="card-body">
           <h3>Welcome ${gamemaster.username}</h3>
           <h3>Your ID: ${gamemaster.GMID}</h3>
-          <img src="Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
+          <img src="/Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
           <a class="btn btn-primary" href="/gamegroups/createForm">Create Game Group</a><br>
           <a class="btn btn-info" href="/gamegroups">View Game Groups</a><br>
           <a class="btn btn-secondary" href="gamemaster-edit-game-group.html">Edit Game Groups</a><br>
