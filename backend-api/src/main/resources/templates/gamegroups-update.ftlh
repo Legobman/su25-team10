@@ -28,6 +28,8 @@
         <div class="card-body">
             <h3>${title}</h3>
             <form id="new-group" action="/gamegroups" method="post" >
+                <label for="groupID">GroupID:</label><br>
+                <input type="number" id="groupID" name="groupID" value="${gameGroup.gameMaster.groupID}" readonly><br>
                 <label for="location">Location:</label><br>
                 <input type="text" id="location" name="location" value="${gameGroup.location}" required><br>
                 <label for="dayOfWeek">Day of the Week Played:</label><br>

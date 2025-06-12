@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import csc340Team10.DnDGroupFinder.gamemaster.GameMaster;
 import csc340Team10.DnDGroupFinder.groupmembership.GroupMembership;
 import io.micrometer.common.lang.NonNull;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,7 +41,7 @@ public class GameGroup {
     @JoinColumn(name = "GMID", nullable = false)
     @JsonIgnoreProperties({"gamegroups", "reviews"})
     private GameMaster gameMaster;
-    @OneToMany()
+    @OneToMany(mappedBy = "gameGroup", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties({"gamegroup", "player"})
     private List<GroupMembership> groupMemberships;
 
