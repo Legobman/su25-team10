@@ -20,8 +20,8 @@ public class GroupMembership {
     private Long membershipID;
     @ManyToOne()
     @JoinColumn(name = "groupID", nullable = false)
-    @JsonIgnoreProperties("groupmemberships")
-    private GameGroup gamegroup;
+    @JsonIgnoreProperties("groupMemberships")
+    private GameGroup gameGroup;
 
     @ManyToOne()
     @JoinColumn(name = "playerID", nullable = false)
@@ -32,13 +32,13 @@ public class GroupMembership {
     }
 
     public GroupMembership(GameGroup gamegroup, Long membershipID, Player player) {
-        this.gamegroup = gamegroup;
+        this.gameGroup = gamegroup;
         this.membershipID = membershipID;
         this.player = player;
     }
 
     public GroupMembership(GameGroup gamegroup, Player player) {
-        this.gamegroup = gamegroup;
+        this.gameGroup = gamegroup;
         this.player = player;
     }
 
@@ -51,11 +51,11 @@ public class GroupMembership {
     }
 
     public GameGroup getGamegroup() {
-        return gamegroup;
+        return gameGroup;
     }
 
     public void setGamegroup(GameGroup gamegroup) {
-        this.gamegroup = gamegroup;
+        this.gameGroup = gamegroup;
     }
 
     public Player getPlayer() {

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import csc340Team10.DnDGroupFinder.gamegroup.GameGroup;
 import csc340Team10.DnDGroupFinder.review.Review;
 import io.micrometer.common.lang.NonNull;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,11 +32,11 @@ public class GameMaster {
     @NonNull
     private String password;
 
-    @OneToMany(mappedBy = "gameMaster")
+    @OneToMany(mappedBy = "gameMaster", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties({"gameMaster", "groupMemberships"})
     private List<GameGroup> gamegroups;
 
-    @OneToMany(mappedBy = "gameMaster")
+    @OneToMany(mappedBy = "gameMaster", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("gamemasters")
     private List<Review> reviews;
 
