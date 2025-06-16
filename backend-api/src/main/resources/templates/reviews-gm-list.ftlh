@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GM Homepage</title>
+    <title>GM review Viewer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../styles.css">
     </head>
   
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">D&D Group Finder</a>
+      <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,23 +20,37 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
+          <a class="nav-link" href="/gamemasters/1">Return to Homepage</a>
         </div>
       </div>
     </div>
   </nav>
     <div class="center">
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-          <h3>Welcome ${gamemaster.username}</h3>
-          <h3>Your ID: ${gamemaster.GMID}</h3>
-          <img src="/Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
-          <a class="btn btn-primary" href="/gamegroups/createForm">Create Game Group</a><br>
-          <a class="btn btn-info" href="/gamegroups">View Game Groups</a><br>
-          <a class="btn btn-primary" href="/reviews/search/${gamemaster.GMID}">View Reviews</a><br>
-          <a class="btn btn-info" href="gamemaster-player-lookup.html">Player Lookup</a><br>
-          <a class="btn btn-secondary" href="/gamemasters/updateForm/${gamemaster.GMID}">Update Profile</a><br>
-          <a class="btn btn-danger" href="/gamemasters/delete/${gamemaster.GMID}">Delete Profile</a>
-        </div>
+      <div class="card text-center" style="width: 100%">
+          <div class="card">
+            <table class="table table-striped rounded-3 overflow-hidden">
+              <tr>
+                <th>ID</th>
+                <th>Review</th>
+                <th>Reponse</th>
+                <th>Reviewer Username</th>
+                <th>Actions</th>
+              </tr>
+              <#list reviewsList as review>
+              <tr>
+                <td>${review.reviewID}</td>
+                <td><p class="card-title">${review.rating}</p></td>
+                <#if review.response??>
+                    <td><p class="card-subtitle mb-2 text-body-secondary">${review.response}</p></td>
+                <#else>
+                    <td><p class="card-subtitle mb-2 text-body-secondary">NA</p></td>
+                </#if>
+                <td><p class="card-subtitle mb-2 text-body-secondary">${review.player.username}</p></td>
+                <td><a href="/reviews/${review.reviewID}" class="card-link">View</a></td>
+              </tr>
+              </#list>
+            </table>
+          </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
