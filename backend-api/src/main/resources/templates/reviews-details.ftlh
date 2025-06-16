@@ -37,6 +37,7 @@
                     <li class="list-group-item">Review: NA</li>
                 </#if>
               <li class="list-group-item">Reviewer: ${review.player.username}</li>
+              <li class="list-group-item">Reviewer: ${review.player.playerID}</li>
               <li class="list-group-item">Reviewee: ${review.gameMaster.username}</li>
               <a href="/reviews/updateForm/${review.reviewID}" class="btn btn-primary">Respond to review</a>
             </ul>
