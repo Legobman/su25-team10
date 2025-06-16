@@ -2,6 +2,7 @@ package csc340Team10.DnDGroupFinder.player;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import csc340Team10.DnDGroupFinder.groupmembership.GroupMembership;
@@ -16,20 +17,27 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "players") 
+@Table(name = "players")
 public class Player {
+
     @Id
-    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
     private Long playerID;
+
     @NonNull
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
+
     @NonNull
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String username;
+
     @NonNull
+    @JsonIgnore
+    @Column(nullable = false)
     private String password;
+
     @OneToMany(mappedBy = "player")
     @JsonIgnoreProperties("player")
     private List<GroupMembership> groupMemberships;
@@ -38,25 +46,19 @@ public class Player {
     @JsonIgnoreProperties("player")
     private List<Review> reviews;
 
+    // Default constructor
     public Player() {
     }
 
-    public Player(String email, String password, Long playerID, String username) {
+    // Constructor without ID (used when creating new players)
+    public Player(String email, String username, String password) {
         this.email = email;
-        this.password = password;
-        this.playerID = playerID;
         this.username = username;
+        this.password = password;
     }
 
-    public Player(String email, String password, String username) {
-        this.email = email;
-        this.password = password;
-        this.username = username;
-    }
-    
-
-    public Player(Long playerID, String email, String username, String password, List<GroupMembership> groupMemberships,
-            List<Review> reviews) {
+    // Full constructor with lists
+    public Player(Long playerID, String email, String username, String password, List<GroupMembership> groupMemberships, List<Review> reviews) {
         this.playerID = playerID;
         this.email = email;
         this.username = username;
@@ -64,17 +66,8 @@ public class Player {
         this.groupMemberships = groupMemberships;
         this.reviews = reviews;
     }
-    
 
-    public Player(Long playerID, String email, String username, String password,
-            List<GroupMembership> groupMemberships) {
-        this.playerID = playerID;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.groupMemberships = groupMemberships;
-    }
-
+    // Getters and Setters
     public Long getPlayerID() {
         return playerID;
     }
@@ -99,6 +92,7 @@ public class Player {
         this.username = username;
     }
 
+    // Password getter is ignored during JSON serialization for security
     public String getPassword() {
         return password;
     }
@@ -122,5 +116,13 @@ public class Player {
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "playerID=" + playerID +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }
