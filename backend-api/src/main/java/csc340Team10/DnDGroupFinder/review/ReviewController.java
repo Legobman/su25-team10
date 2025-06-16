@@ -2,11 +2,10 @@ package csc340Team10.DnDGroupFinder.review;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
@@ -15,35 +14,58 @@ public class ReviewController {
     private ReviewService reviewService;
 
     @GetMapping("/reviews")
-    public Object getAllReviews() {
-        return reviewService.getAllReviews();
+    public Object getAllReviews(Model model) {
+        model.addAttribute("reviewsList", reviewService.getAllReviews());
+        model.addAttribute("title", "All Reviews");
+        return "reviews-list";
     }
 
     @GetMapping("/reviews/{id}")
-    public Review getReviewById(@PathVariable long id) {
-        return reviewService.getReviewById(id);
+    public Object getReviewById(@PathVariable long id, Model model) {
+        model.addAttribute("review", reviewService.getReviewById(id));
+        model.addAttribute("title", "Review #: " + id);
+        return "reviews-details";
     }
 
     @GetMapping("/reviews/search/{id}")
-    public Object findYourReviews(@PathVariable long id) {
-        return reviewService.findYourReviews(id);
+    public Object findYourReviews(@PathVariable long id, Model model) {
+        model.addAttribute("reviewsList", reviewService.findYourReviews(id));
+        model.addAttribute("title", "All Reviews for GM: " + id);
+        return "reviews-gm-list";
+    }
+
+    @GetMapping("/reviews/createForm")
+    public Object showCreateForm(Model model) {
+        Review review = new Review();
+        model.addAttribute("review", review);
+        model.addAttribute("title", "Create New Review");
+        return "Review-create";
     }
 
     @PostMapping("/reviews")
     public Object addReview(@RequestBody Review review) {
-        return reviewService.addReview(review);
+        Review newReview = reviewService.addReview(review);
+        return "redirect:/review/" + newReview.getReviewID();
     }
 
-    @PutMapping("/reviews/{id}")
-    public Review updateReview(@PathVariable Long id, @RequestBody Review review) {
+    @GetMapping("/reviews/updateForm/{id}")
+    public Object showUpdateForm(@PathVariable Long id, Model model) {
+        Review review = reviewService.getReviewById(id);
+        model.addAttribute("review", review);
+        model.addAttribute("title", "Update Review: " + id);
+        return "Review-update";
+    }
+
+    @PostMapping("/reviews/update/{id}")
+    public Object updateReview(@PathVariable Long id, Review review) {
         reviewService.updateReview(id, review);
-        return reviewService.getReviewById(id);
+        return "redirect:/reviews/" + id;
     }
 
-    @DeleteMapping("/reviews/{id}")
+    @GetMapping("/reviews/delete/{id}")
     public Object deleteReview(@PathVariable Long id) {
         reviewService.deleteReview(id);
-        return reviewService.getAllReviews();
+        return "redirect:/reviews";
     }
 
     @PostMapping("/reviews/writeFile")
