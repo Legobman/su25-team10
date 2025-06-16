@@ -2,10 +2,10 @@ package csc340Team10.DnDGroupFinder.player;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,11 +15,11 @@ public class PlayerService {
     @Autowired
     private PlayerRepository playerRepository;
 
-    public Object getAllPlayers() {
+    public List<Player> getAllPlayers() {
         return playerRepository.findAll();
     }
 
-    public Player getPlayerById(@PathVariable long playerID) {
+    public Player getPlayerById(long playerID) {
         return playerRepository.findById(playerID).orElse(null);
     }
 
@@ -28,6 +28,7 @@ public class PlayerService {
     }
 
     public Player updatePlayer(Long playerID, Player player) {
+        // Optional: add check if playerID exists before saving
         return playerRepository.save(player);
     }
 
@@ -54,6 +55,26 @@ public class PlayerService {
             e.printStackTrace();
             return null;
         }
+    }
 
+    // New method: Find player by exact username
+    public Player findByUsername(String username) {
+        return playerRepository.findByUsername(username);
+    }
+
+    // New method: Find players whose usernames contain keyword (case insensitive)
+    public List<Player> findByUsernameContaining(String keyword) {
+        return playerRepository.findByUsernameContainingIgnoreCase(keyword);
+    }
+
+    // New method: Update password for player by ID
+    public boolean updatePassword(Long playerID, String newPassword) {
+        Player player = playerRepository.findById(playerID).orElse(null);
+        if (player == null) {
+            return false;
+        }
+        player.setPassword(newPassword);
+        playerRepository.save(player);
+        return true;
     }
 }

@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "csc340Team10.DnDGroupFinder.DemoApplication",
+            "projectName": "DnDGroupFinder"
+        }
+    ]
+}
