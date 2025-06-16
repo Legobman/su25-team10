@@ -43,9 +43,9 @@ public class ReviewController {
     }
 
     @PostMapping("/reviews")
-    public Object addReview(@RequestBody Review review) {
+    public Object addReview(Review review) {
         Review newReview = reviewService.addReview(review);
-        return "redirect:/review/" + newReview.getReviewID();
+        return "redirect:/reviews/" + newReview.getReviewID();
     }
 
     @GetMapping("/reviews/updateForm/{id}")
@@ -53,7 +53,7 @@ public class ReviewController {
         Review review = reviewService.getReviewById(id);
         model.addAttribute("review", review);
         model.addAttribute("title", "Update Review: " + id);
-        return "Review-update";
+        return "reviews-gm-update";
     }
 
     @PostMapping("/reviews/update/{id}")
