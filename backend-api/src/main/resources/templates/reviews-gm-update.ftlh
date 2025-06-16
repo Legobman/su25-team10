@@ -36,6 +36,8 @@
                 <textarea id="response" name="response" required></textarea>
                 <label for="reviewer">Reviewer:</label><br>
                 <input type="text" id="reviewer" name="reviewer" value="${review.player.username}" readonly />
+                <label for="playerID">Reviewer:</label><br>
+                <input type="number" id="playerID" name="playerID" value="${review.player.playerID}" readonly />
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a href="/reviews/${review.reviewID?c}" class="btn btn-outline-danger">Cancel</a>
             </form>
