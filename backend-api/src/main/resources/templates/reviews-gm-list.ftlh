@@ -34,6 +34,7 @@
                 <th>Review</th>
                 <th>Reponse</th>
                 <th>Reviewer Username</th>
+                <th>Reviewer ID</th>
                 <th>Actions</th>
               </tr>
               <#list reviewsList as review>
@@ -46,6 +47,7 @@
                     <td><p class="card-subtitle mb-2 text-body-secondary">NA</p></td>
                 </#if>
                 <td><p class="card-subtitle mb-2 text-body-secondary">${review.player.username}</p></td>
+                <td><p class="card-subtitle mb-2 text-body-secondary">${review.player.playerID}</p></td>
                 <td><a href="/reviews/${review.reviewID}" class="card-link">View</a></td>
               </tr>
               </#list>

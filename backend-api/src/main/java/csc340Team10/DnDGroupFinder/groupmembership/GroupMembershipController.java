@@ -27,7 +27,7 @@ public class GroupMembershipController {
         return "groupmembership-details";
     }
 
-    @GetMapping("/memberships/find/{playerid}")
+    @GetMapping("/memberships/find")
     public Object findPlayerGroups(@PathVariable Long playerid, Model model) {
         model.addAttribute("groupMembershipList", groupMembershipService.findPlayerGroups(playerid));
         model.addAttribute("title", "Group Membership by Player");

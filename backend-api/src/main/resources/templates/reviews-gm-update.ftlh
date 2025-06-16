@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GM Update</title>
+    <title>GM Response</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
   </head>
@@ -36,7 +36,7 @@
                 <textarea id="response" name="response" required></textarea>
                 <label for="reviewer">Reviewer:</label><br>
                 <input type="text" id="reviewer" name="reviewer" value="${review.player.username}" readonly />
-                <label for="playerID">Reviewer:</label><br>
+                <label for="playerID">Reviewer ID:</label><br>
                 <input type="number" id="playerID" name="playerID" value="${review.player.playerID}" readonly />
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a href="/reviews/${review.reviewID?c}" class="btn btn-outline-danger">Cancel</a>
