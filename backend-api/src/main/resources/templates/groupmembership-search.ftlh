@@ -27,10 +27,10 @@
   <div class="center">
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-            <h3>Please enter the Player ID you wish to search:</h3>
+            <h3>Please enter the Player Username you wish to search:</h3>
             <form id="serach-membership" action="/memberships/find" method="get">
-                <label for="playerID">Player ID:</label><br>
-                <input type="number" id="playerID" name="playerID" required><br>
+                <label for="username">Player Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
                 <input class="btn btn-primary" type="submit" value="Search">
             </form>
         </div>
