@@ -34,7 +34,7 @@
     - OR download zip.
     - Open the project in VS Code.
     - This project is built to run with jdk 21.
-    - [Dependencies](https://github.com/Legobman/su25-team10/blob/88bb712899067431aad32d380f6bc84ab1197c8b/backend-api/pom.xml#32) to JPA, Postgres, and Freemarker, in addition to the usual. JPA handles the persistence, Postgres is the database to be used, FreeMarker generates HTML templates.
+    - [Dependencies](https://github.com/Legobman/su25-team10/blob/88bb712899067431aad32d380f6bc84ab1197c8b/backend-api/pom.xml#L32) to JPA, Postgres, and Freemarker, in addition to the usual. JPA handles the persistence, Postgres is the database to be used, FreeMarker generates HTML templates.
     - [`/src/main/resources/application.properties`](https://github.com/Legobman/su25-team10/blob/88bb712899067431aad32d380f6bc84ab1197c8b/backend-api/src/main/resources/application.properties) file  is the configuration for the app.
     - You MUST have the database up and running before running the project!
         - Login to your neon.tech account.
