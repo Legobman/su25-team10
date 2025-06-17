@@ -16,7 +16,7 @@ public class GameGroupService {
     private GameGroupRepository gameGroupRepository;
 
     public Object getAllGameGroups() {
-        return gameGroupRepository.findAll();
+        return gameGroupRepository.findAllPlayersInGroup();
     }
 
     public GameGroup getGameGroupById(@PathVariable long groupID) {

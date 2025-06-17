@@ -10,7 +10,8 @@ import org.springframework.stereotype.Repository;
 public interface GameGroupRepository extends JpaRepository<GameGroup, Long>{
 @Query(value = "select * from gamegroups g where g.description LIKE %?1%", nativeQuery = true)
     List<GameGroup> searchGameGroup(String term);
-
+@Query(value = "select distinct g from GameGroup g left join fetch g.groupMemberships gms left join fetch gms.player")
+    List<GameGroup> findAllPlayersInGroup();
 
 }
 

@@ -16,8 +16,8 @@ public class GroupMembershipController {
 
     @GetMapping("/memberships")
     public Object getAllMemberships(Model model) {
-        //model.addAttribute("turtlesList", groupMembershipService.getAllMemberships());
-        //model.addAttribute("title", "All Turtles");
+        //model.addAttribute("membershipsList", groupMembershipService.getAllMemberships());
+        //model.addAttribute("title", "All Memberships");
         return "groupmembership-search";
     }
 
@@ -72,7 +72,7 @@ public class GroupMembershipController {
     @GetMapping("/memberships/{groupid}/{playerid}")
     public Object kickPlayer(@PathVariable Long groupid, @PathVariable Long playerid) {
         groupMembershipService.kickPlayer(groupid, playerid);
-        return groupMembershipService.getAllMemberships();
+        return "redirect:/gamegroups";
     }
 
     @PostMapping("/memberships/writeFile")
