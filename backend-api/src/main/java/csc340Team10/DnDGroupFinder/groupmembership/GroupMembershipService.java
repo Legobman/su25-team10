@@ -26,8 +26,8 @@ public class GroupMembershipService {
         return groupMembershipRepository.save(membership);
     }
 
-    public Object findPlayerGroups(long playerID) {
-        return groupMembershipRepository.findPlayerGroups(playerID);
+    public Object findPlayerGroups(String username) {
+        return groupMembershipRepository.findPlayerGroups(username);
     }
 
     public GroupMembership updateMembership(Long membershipID, GroupMembership membership) {

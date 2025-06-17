@@ -29,9 +29,9 @@ public class GroupMembershipController {
     }
 
     @GetMapping("/memberships/find")
-    public Object findPlayerGroups(@RequestParam("playerID") Long playerid, Model model) {
-        model.addAttribute("groupMembershipList", groupMembershipService.findPlayerGroups(playerid));
-        model.addAttribute("title", "Group Membership by Player");
+    public Object findPlayerGroups(@RequestParam("username") String username, Model model) {
+        model.addAttribute("groupMembershipList", groupMembershipService.findPlayerGroups(username));
+        model.addAttribute("title", "Group Membership for Player: " + username);
         return "groupmembership-list";
     }
 

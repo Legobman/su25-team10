@@ -12,7 +12,7 @@ public interface GroupMembershipRepository extends JpaRepository<GroupMembership
     @Query(value = "delete from groupmemberships gms where gms.playerID = ?1 and gms.groupID = ?1", nativeQuery = true)
     List<GroupMembership> kickPlayer(long groupID, long playerID);
 
-    @Query(value = "select * from groupmemberships gms where gms.playerID = ?1", nativeQuery = true)
-    List<GroupMembership> findPlayerGroups(long playerID);
+    @Query(value = "select gms.* FROM groupmemberships gms JOIN players p ON gms.playerID = p.playerID WHERE p.username = ?1", nativeQuery = true)
+    List<GroupMembership> findPlayerGroups(String username);
 
 }
