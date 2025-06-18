@@ -77,4 +77,9 @@ public class PlayerService {
         playerRepository.save(player);
         return true;
     }
+
+    public Player getPlayerByUsername(String username) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPlayerByUsername'");
+    }
 }

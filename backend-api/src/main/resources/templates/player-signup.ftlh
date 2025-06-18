@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Player Login</title>
+    <title>Player Signup</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" type="text/css" />
   </head>
@@ -24,9 +24,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="/players/login">Player Login</a>
-            <a class="nav-link" href="/gamemasters/login">Game Master Login</a>
-            <a class="nav-link" href="/admin/login">Admin Login</a>
+            <a class="nav-link" href="player-login.html">Player Login</a>
+            <a class="nav-link" href="gamemaster-login.html">Game Master Login</a>
+            <a class="nav-link" href="admin-login.html">Admin Login</a>
           </div>
         </div>
       </div>
@@ -35,15 +35,17 @@
     <div class="center">
       <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-          <h3>Player Login</h3>
-          <form action="/players/login" method="post">
+          <h3>Player Sign Up</h3>
+          <form action="/players" method="post">
             <label for="username">Username:</label><br />
             <input type="text" id="username" name="username" required /><br />
             <label for="password">Password:</label><br />
             <input type="password" id="password" name="password" minlength="8" required /><br />
-            <input class="btn btn-primary mt-2" type="submit" value="Login" />
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required /><br />
+            <input class="btn btn-primary mt-2" type="submit" value="Sign Up" />
           </form>
-          <a class="btn btn-secondary mt-2" href="/players/signup">Sign Up</a>
+          <a class="btn btn-secondary mt-2" href="/players">Back to Login</a>
         </div>
       </div>
     </div>

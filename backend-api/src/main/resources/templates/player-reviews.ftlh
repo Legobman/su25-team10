@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Player Login</title>
+    <title>Player Reviews</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" type="text/css" />
   </head>
@@ -24,28 +24,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="/players/login">Player Login</a>
+            <a class="nav-link" href="/players/login">Player Login</a>
             <a class="nav-link" href="/gamemasters/login">Game Master Login</a>
             <a class="nav-link" href="/admin/login">Admin Login</a>
+            <a class="nav-link" href="/players/home">Home</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="center">
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-          <h3>Player Login</h3>
-          <form action="/players/login" method="post">
-            <label for="username">Username:</label><br />
-            <input type="text" id="username" name="username" required /><br />
-            <label for="password">Password:</label><br />
-            <input type="password" id="password" name="password" minlength="8" required /><br />
-            <input class="btn btn-primary mt-2" type="submit" value="Login" />
-          </form>
-          <a class="btn btn-secondary mt-2" href="/players/signup">Sign Up</a>
+    <div class="container mt-4">
+      <h3>Player Reviews</h3>
+      <form action="/players/reviews" method="post">
+        <div class="mb-3">
+          <label for="gameGroupId" class="form-label">Game Group ID:</label>
+          <input type="number" class="form-control" id="gameGroupId" name="gameGroupId" required />
         </div>
-      </div>
+        <div class="mb-3">
+          <label for="reviewText" class="form-label">Review:</label>
+          <textarea class="form-control" id="reviewText" name="reviewText" rows="4" required></textarea>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit Review" />
+      </form>
     </div>
 
     <script

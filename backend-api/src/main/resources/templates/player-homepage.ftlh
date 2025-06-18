@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Player Login</title>
+    <title>Player Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" type="text/css" />
   </head>
@@ -24,28 +24,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="/players/login">Player Login</a>
+            <a class="nav-link" href="/players/login">Player Login</a>
             <a class="nav-link" href="/gamemasters/login">Game Master Login</a>
             <a class="nav-link" href="/admin/login">Admin Login</a>
+            <a class="nav-link active" href="/players/home">Home</a>
+            <a class="nav-link" href="/players/profile">Profile</a>
+            <a class="nav-link" href="/players/my-game-groups">My Game Groups</a>
+            <a class="nav-link" href="/players/find-game-groups">Find Game Groups</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="center">
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-          <h3>Player Login</h3>
-          <form action="/players/login" method="post">
-            <label for="username">Username:</label><br />
-            <input type="text" id="username" name="username" required /><br />
-            <label for="password">Password:</label><br />
-            <input type="password" id="password" name="password" minlength="8" required /><br />
-            <input class="btn btn-primary mt-2" type="submit" value="Login" />
-          </form>
-          <a class="btn btn-secondary mt-2" href="/players/signup">Sign Up</a>
-        </div>
-      </div>
+    <div class="container mt-4">
+      <h3>Welcome to your Player Homepage</h3>
+      <p>Here you can navigate to your profile, reviews, and manage your game groups.</p>
     </div>
 
     <script
