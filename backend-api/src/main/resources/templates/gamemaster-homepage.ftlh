@@ -34,7 +34,7 @@
           <a class="btn btn-info" href="/gamegroups">View Game Groups</a><br>
           <a class="btn btn-primary" href="/reviews/search/${gamemaster.GMID}">View Reviews</a><br>
           <a class="btn btn-info" href="/memberships">Player Lookup</a><br>
-          <a class="btn btn-secondary" href="/gamemasters/updateForm/${gamemaster.GMID}">Update Profile</a><br>
+          <a class="btn btn-primary" href="/gamemasters/updateForm/${gamemaster.GMID}">Update Profile</a><br>
           <a class="btn btn-danger" href="/gamemasters/delete/${gamemaster.GMID}">Delete Profile</a>
         </div>
       </div>
