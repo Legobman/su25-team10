@@ -19,7 +19,7 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
-          <a class="nav-link" href="/gamemasters/1">Return to Homepage</a>
+          <a class="nav-link" href="/gamemasters/${GMID}">Return to Homepage</a>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
                 <label for="GMID">Your GMID:</label><br>
                 <input type="number" id="GMID" name="GMID" required><br>
                 <button type="submit" class="btn btn-primary">Save</button>
-                <a href="/gamegroups" class="btn btn-outline-danger" >Cancel</a>
+                <a href="/gamemasters/${GMID}" class="btn btn-outline-danger">Cancel</a>
             </form>
         </div>
       </div>

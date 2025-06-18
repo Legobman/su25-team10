@@ -33,7 +33,7 @@
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" placeholder="example@domain.edu"/><br>
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password"/>
+                <input type="password" id="password" name="password" minlength="8"/>
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a href="/gamemasters" class="btn btn-outline-danger" >Cancel</a>
             </form>

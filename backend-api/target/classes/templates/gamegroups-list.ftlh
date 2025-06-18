@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">D&D Group Finder</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,7 +20,7 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
-          <a class="nav-link" href="/gamemasters/1">Return to Homepage</a>
+          <a class="nav-link" href="/gamemasters/${GMID!'0'}">Return to Homepage</a>
         </div>
       </div>
     </div>
@@ -37,6 +37,7 @@
                 <th>End Time</th>
                 <th>Location</th>
                 <th>Player Slots</th>
+                <th>Players</th>
                 <th>Actions</th>
               </tr>
               <#list gameGroupList as gameGroup>
@@ -48,6 +49,20 @@
                 <td><p class="card-subtitle mb-2 text-body-secondary">${gameGroup.endTime}</p></td>
                 <td><p class="card-text">${gameGroup.location}</p></td>
                 <td><p class="card-text">${gameGroup.playerSlots}</p></td>
+                <td>
+                  <ul>
+                    <#if gameGroup.groupMemberships?? && (gameGroup.groupMemberships?size > 0)>
+                    <#list gameGroup.groupMemberships as groupMembership>
+                      <li>
+                        ${groupMembership.player.username}
+                        <a class="btn btn-sm btn-danger ms-2" href="/memberships/${gameGroup.groupID}/${groupMembership.player.playerID}">Kick</a>
+                      </li>
+                    </#list>
+                    <#else>
+                      <li>No Players Yet</li>
+                    </#if>
+                  </ul>
+                </td>
                 <td><a href="/gamegroups/${gameGroup.groupID}" class="card-link">View</a></td>
               </tr>
               </#list>

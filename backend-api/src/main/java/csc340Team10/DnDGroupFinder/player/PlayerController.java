@@ -6,76 +6,67 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/players")
 public class PlayerController {
 
     @Autowired
     private PlayerService playerService;
 
-    @GetMapping("/players")
-    public Object getAllPlayers(Model model) {
+    // Show login form
+    @GetMapping("/login")
+    public String loginForm() {
         return "player-login";
     }
 
-    @GetMapping("/players/{id}")
-    public Object getPlayerById(@PathVariable long id, Model model) {
-        model.addAttribute("player", playerService.getPlayerById(id));
-        model.addAttribute("title", "Player #: " + id);
-        return "player-homepage";
-    }
-
-    @GetMapping("/players/createForm")
-    public Object showCreateForm(Model model) {
-        Player player = new Player();
-        model.addAttribute("player", player);
-        model.addAttribute("title", "Create New Player");
-        return "player-create";
-    }
-
-    @PostMapping("/players")
-    public String addPlayer(Player player) {
-        Player newPlayer = playerService.addPlayer(player);
-        return "redirect:/players";
-    }
-
-    @PostMapping("/players/login")
-    public Object getPlayerByUsername(@RequestParam String username, @RequestParam String password, Model model) {
+    // Process login
+    @PostMapping("/login")
+    public String login(@RequestParam String username, @RequestParam String password, Model model) {
         Player player = playerService.getPlayerByUsername(username);
         if (player != null && player.getPassword().equals(password)) {
             model.addAttribute("player", player);
-            model.addAttribute("title", "Player #: " + player.getPlayerID());
             return "player-homepage";
         } else {
-            return "redirect:/players";
+            model.addAttribute("error", "Invalid username or password");
+            return "player-login";
         }
     }
 
-    @GetMapping("/players/updateForm/{id}")
-    public Object showUpdateForm(@PathVariable Long id, Model model) {
-        Player player = playerService.getPlayerById(id);
+    // Show sign-up form
+    @GetMapping("/createForm")
+    public String createForm(Model model) {
+        model.addAttribute("player", new Player());
+        return "player-create";
+    }
+
+    // Process sign-up
+    @PostMapping("/create")
+    public String createPlayer(@ModelAttribute Player player) {
+        playerService.addPlayer(player);
+        return "redirect:/players/login";
+    }
+
+    // Show update form
+    @GetMapping("/updateForm/{playerID}")
+    public String updateForm(@PathVariable Long playerID, Model model) {
+        Player player = playerService.getPlayerById(playerID);
+        if (player == null) {
+            return "redirect:/players/login";
+        }
         model.addAttribute("player", player);
-        model.addAttribute("title", "Update Player: " + id);
         return "player-update";
     }
 
-    @PostMapping("/players/update/{id}")
-    public Object updatePlayer(@PathVariable Long id, Player player) {
-        playerService.updatePlayer(id, player);
-        return "redirect:/players/" + id;
+    // Process update
+    @PostMapping("/update/{playerID}")
+    public String updatePlayer(@PathVariable Long playerID, @ModelAttribute Player player) {
+        playerService.updatePlayer(playerID, player);
+        return "redirect:/players/login";
     }
 
-    @GetMapping("/players/delete/{id}")
-    public Object deletePlayer(@PathVariable Long id) {
-        playerService.deletePlayer(id);
-        return "redirect:/players";
-    }
-
-    @PostMapping("/players/writeFile")
-    public Object writeJson(@RequestBody Player player) {
-        return playerService.writeJson(player);
-    }
-
-    @GetMapping("/players/readFile")
-    public Object readJson() {
-        return playerService.readJson();
+    // Delete player
+    @GetMapping("/delete/{playerID}")
+    public String deletePlayer(@PathVariable Long playerID) {
+        playerService.deletePlayer(playerID);
+        return "redirect:/players/login";
     }
 }

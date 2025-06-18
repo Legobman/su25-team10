@@ -1,6 +1,60 @@
+/* Center content vertically and horizontally */
 .center {
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Card styling */
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Buttons spacing */
+.btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form labels spacing */
+label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Error message style */
+.error {
+  color: #dc3545;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .card {
+    width: 90% !important;
+  }
 }
