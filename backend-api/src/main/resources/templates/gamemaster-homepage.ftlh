@@ -30,10 +30,10 @@
           <h3>Welcome ${gamemaster.username}</h3>
           <h3>Your ID: ${gamemaster.GMID}</h3>
           <img src="/Dungeon-Master.webp" alt="Game Master" style="width:60%"><br>
-          <a class="btn btn-primary" href="/gamegroups/createForm">Create Game Group</a><br>
-          <a class="btn btn-info" href="/gamegroups">View Game Groups</a><br>
+          <a class="btn btn-primary" href="/gamegroups/createForm/${gamemaster.GMID}">Create Game Group</a><br>
+          <a class="btn btn-info" href="/gamegroups/gmlookup/${gamemaster.GMID}">View Game Groups</a><br>
           <a class="btn btn-primary" href="/reviews/search/${gamemaster.GMID}">View Reviews</a><br>
-          <a class="btn btn-info" href="/memberships">Player Lookup</a><br>
+          <a class="btn btn-info" href="/memberships/search/${gamemaster.GMID}">Player Lookup</a><br>
           <a class="btn btn-primary" href="/gamemasters/updateForm/${gamemaster.GMID}">Update Profile</a><br>
           <a class="btn btn-danger" href="/gamemasters/delete/${gamemaster.GMID}">Delete Profile</a>
         </div>

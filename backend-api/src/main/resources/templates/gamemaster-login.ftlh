@@ -27,7 +27,7 @@
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
             <h3>Game Master Login</h3>
-            <form id="new-gm" action="/gamemasters/1" method="get">
+            <form id="new-gm" action="/gamemasters/login" method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username" required><br>
                 <label for="password">Password:</label><br>

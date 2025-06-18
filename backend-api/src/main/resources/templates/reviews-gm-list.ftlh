@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">D&D Group Finder</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,7 +20,7 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
-          <a class="nav-link" href="/gamemasters/1">Return to Homepage</a>
+          <a class="nav-link" href="/gamemasters/${GMID}">Return to Homepage</a>
         </div>
       </div>
     </div>
@@ -34,7 +34,6 @@
                 <th>Review</th>
                 <th>Reponse</th>
                 <th>Reviewer Username</th>
-                <th>Reviewer ID</th>
                 <th>Actions</th>
               </tr>
               <#list reviewsList as review>
@@ -47,8 +46,7 @@
                     <td><p class="card-subtitle mb-2 text-body-secondary">NA</p></td>
                 </#if>
                 <td><p class="card-subtitle mb-2 text-body-secondary">${review.player.username}</p></td>
-                <td><p class="card-subtitle mb-2 text-body-secondary">${review.player.playerID}</p></td>
-                <td><a href="/reviews/${review.reviewID}" class="card-link">View</a></td>
+                <td><a href="/reviews/${review.reviewID}/${GMID}" class="card-link">View</a></td>
               </tr>
               </#list>
             </table>

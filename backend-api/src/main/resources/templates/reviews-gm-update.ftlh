@@ -19,6 +19,7 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
+          <a class="nav-link" href="/gamemasters/${review.gameMaster.GMID}">Return to Homepage</a>
         </div>
       </div>
     </div>
@@ -27,7 +28,7 @@
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
             <h3>${title}</h3>
-            <form id="new-review" action="/reviews/update/${review.reviewID?c}" method="post">
+            <form id="new-review" action="/reviews/update/${review.reviewID?c}/${review.gameMaster.GMID}" method="post">
                 <label for="reviewID">ReviewID:</label><br>
                 <input type="number" id="reviewID" name="reviewID" value="${review.reviewID?c}" readonly /><br>
                 <label for="rating">Review:</label><br>
@@ -36,10 +37,8 @@
                 <textarea id="response" name="response" required></textarea>
                 <label for="reviewer">Reviewer:</label><br>
                 <input type="text" id="reviewer" name="reviewer" value="${review.player.username}" readonly />
-                <label for="playerID">Reviewer ID:</label><br>
-                <input type="number" id="playerID" name="playerID" value="${review.player.playerID}" readonly />
                 <button type="submit" class="btn btn-primary">Save</button>
-                <a href="/reviews/${review.reviewID?c}" class="btn btn-outline-danger">Cancel</a>
+                <a href="/reviews/${review.reviewID?c}/${review.gameMaster.GMID}" class="btn btn-outline-danger">Cancel</a>
             </form>
         </div>
       </div>

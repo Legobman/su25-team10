@@ -14,10 +14,11 @@ public class GroupMembershipController {
     @Autowired
     private GroupMembershipService groupMembershipService;
 
-    @GetMapping("/memberships")
-    public Object getAllMemberships(Model model) {
+    @GetMapping("/memberships/search/{GMID}")
+    public Object getAllMemberships(@PathVariable Long GMID, Model model) {
         //model.addAttribute("membershipsList", groupMembershipService.getAllMemberships());
         //model.addAttribute("title", "All Memberships");
+        model.addAttribute("GMID", GMID);
         return "groupmembership-search";
     }
 
@@ -28,9 +29,10 @@ public class GroupMembershipController {
         return "groupmembership-details";
     }
 
-    @GetMapping("/memberships/find")
-    public Object findPlayerGroups(@RequestParam("username") String username, Model model) {
+    @GetMapping("/memberships/find/{GMID}")
+    public Object findPlayerGroups(@RequestParam("username") String username, @PathVariable Long GMID, Model model) {
         model.addAttribute("groupMembershipList", groupMembershipService.findPlayerGroups(username));
+        model.addAttribute("GMID", GMID);
         model.addAttribute("title", "Group Membership for Player: " + username);
         return "groupmembership-list";
     }

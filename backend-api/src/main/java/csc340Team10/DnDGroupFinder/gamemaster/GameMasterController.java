@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GameMasterController {
@@ -40,6 +41,18 @@ public class GameMasterController {
     public String addGameMaster(GameMaster gameMaster) {
         GameMaster newGameMaster = gameMasterService.addGameMaster(gameMaster);
         return "redirect:/gamemasters";
+    }
+
+    @PostMapping("/gamemasters/login")
+    public Object getGameMasterByUsername(@RequestParam String username, @RequestParam String password, Model model) {
+        GameMaster gameMaster = gameMasterService.getGameMasterByUsername(username);
+        if (gameMaster != null && gameMaster.getPassword().equals(password)) {
+            model.addAttribute("gamemaster", gameMaster);
+            model.addAttribute("title", "Game Master #: " + gameMaster.getGMID());
+            return "gamemaster-homepage";
+        } else {
+        return "redirect:/gamemasters";
+        }
     }
 
     @GetMapping("/gamemasters/updateForm/{id}")
