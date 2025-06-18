@@ -19,6 +19,7 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
+          <a class="nav-link" href="/gamemasters/${gamemaster.GMID}">Return to Homepage</a>
         </div>
       </div>
     </div>

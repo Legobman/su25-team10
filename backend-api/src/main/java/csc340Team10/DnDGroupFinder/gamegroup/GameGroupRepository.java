@@ -12,6 +12,7 @@ public interface GameGroupRepository extends JpaRepository<GameGroup, Long>{
     List<GameGroup> searchGameGroup(String term);
 @Query(value = "select distinct g from GameGroup g left join fetch g.groupMemberships gms left join fetch gms.player")
     List<GameGroup> findAllPlayersInGroup();
-
+@Query(value = "select * from gamegroups g where g.GMID = ?1", nativeQuery = true)
+    List<GameGroup> getGameGroupsByGMID(Long gmId);
 }
 

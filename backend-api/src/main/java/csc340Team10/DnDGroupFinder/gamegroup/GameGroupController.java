@@ -1,5 +1,7 @@
 package csc340Team10.DnDGroupFinder.gamegroup;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,12 +41,22 @@ public class GameGroupController {
         return gameGroupService.searchGameGroup(term);
     }
     
-    @GetMapping("/gamegroups/createForm")
-    public Object showCreateForm(Model model) {
+    @GetMapping("/gamegroups/createForm/{GMID}")
+    public Object showCreateForm(@PathVariable Long GMID, Model model) {
         GameGroup gameGroup = new GameGroup();
         model.addAttribute("gameGroup", gameGroup);
+        model.addAttribute("GMID", GMID);
         model.addAttribute("title", "Create New Game Group");
         return "gamegroups-create";
+    }
+
+    @GetMapping("/gamegroups/gmlookup/{GMID}")
+    public Object getGameGroupsByGMID(@PathVariable Long GMID, Model model) {
+        List<GameGroup> gameGroups = gameGroupService.getGameGroupsByGMID(GMID);
+        model.addAttribute("gameGroupList", gameGroups);
+        model.addAttribute("GMID", GMID);
+        model.addAttribute("title", "Game Group for ID: " + GMID);
+        return "gamegroups-list";
     }
 
     @PostMapping("/gamegroups")

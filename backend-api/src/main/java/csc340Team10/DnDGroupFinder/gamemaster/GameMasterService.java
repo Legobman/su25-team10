@@ -27,6 +27,10 @@ public class GameMasterService {
         return gameMasterRepository.save(gameMaster);
     }
 
+    public GameMaster getGameMasterByUsername(String username) {
+        return gameMasterRepository.getGameMasterByUsername(username).orElse(null);
+    }
+
     public GameMaster updateGameMaster(Long GMID, GameMaster gameMaster) {
         return gameMasterRepository.save(gameMaster);
     }

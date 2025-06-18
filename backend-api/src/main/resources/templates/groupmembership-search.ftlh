@@ -19,7 +19,7 @@
           <a class="nav-link" href="#">Player Login</a>
           <a class="nav-link" href="/gamemasters">Game Master Login</a>
           <a class="nav-link" href="#">Admin Login</a>
-          <a class="nav-link" href="/gamemasters/1">Return to Homepage</a>
+          <a class="nav-link" href="/gamemasters/${GMID}">Return to Homepage</a>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
             <h3>Please enter the Player Username you wish to search:</h3>
-            <form id="serach-membership" action="/memberships/find" method="get">
+            <form id="serach-membership" action="/memberships/find/${GMID}" method="get">
                 <label for="username">Player Username:</label><br>
                 <input type="text" id="username" name="username" required><br>
                 <input class="btn btn-primary" type="submit" value="Search">

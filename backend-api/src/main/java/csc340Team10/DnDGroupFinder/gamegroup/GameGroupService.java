@@ -2,6 +2,7 @@ package csc340Team10.DnDGroupFinder.gamegroup;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class GameGroupService {
 
     public GameGroup getGameGroupById(@PathVariable long groupID) {
         return gameGroupRepository.findById(groupID).orElse(null);
+    }
+
+    public List<GameGroup> getGameGroupsByGMID(Long gmId) {
+        return gameGroupRepository.getGameGroupsByGMID(gmId);
     }
 
     public GameGroup addGameGroup(GameGroup gameGroup) {

@@ -20,9 +20,10 @@ public class ReviewController {
         return "reviews-list";
     }
 
-    @GetMapping("/reviews/{id}")
-    public Object getReviewById(@PathVariable long id, Model model) {
+    @GetMapping("/reviews/{id}/{GMID}")
+    public Object getReviewById(@PathVariable long id, @PathVariable long GMID, Model model) {
         model.addAttribute("review", reviewService.getReviewById(id));
+        model.addAttribute("GMID", GMID);
         model.addAttribute("title", "Review #: " + id);
         return "reviews-details";
     }
@@ -30,6 +31,7 @@ public class ReviewController {
     @GetMapping("/reviews/search/{id}")
     public Object findYourReviews(@PathVariable long id, Model model) {
         model.addAttribute("reviewsList", reviewService.findYourReviews(id));
+        model.addAttribute("GMID", id);
         model.addAttribute("title", "All Reviews for GM: " + id);
         return "reviews-gm-list";
     }
@@ -56,10 +58,10 @@ public class ReviewController {
         return "reviews-gm-update";
     }
 
-    @PostMapping("/reviews/update/{id}")
-    public Object updateReview(@PathVariable Long id, Review review) {
+    @PostMapping("/reviews/update/{id}/{GMID}")
+    public Object updateReview(@PathVariable Long id, @PathVariable long GMID, Review review) {
         reviewService.updateReview(id, review);
-        return "redirect:/reviews/" + id;
+        return "redirect:/reviews/" + id + "/" + GMID;
     }
 
     @GetMapping("/reviews/delete/{id}")
