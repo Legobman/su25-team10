@@ -81,10 +81,10 @@ public class GameGroupController {
         return "redirect:/gamegroups/" + id;
     }
 
-    @GetMapping("/gamegroups/delete/{id}")
-    public Object deleteGameGroup(@PathVariable Long id) {
+    @GetMapping("/gamegroups/delete/{id}/{GMID}")
+    public Object deleteGameGroup(@PathVariable Long id, @PathVariable Long GMID) {
         gameGroupService.deleteGameGroup(id);
-        return "redirect:/gamegroups";
+        return "redirect:/gamegroups/gmlookup/" + GMID;
     }
 
     @PostMapping("/gamegroups/writeFile")

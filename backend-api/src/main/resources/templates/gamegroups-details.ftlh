@@ -37,7 +37,7 @@
               <li class="list-group-item">Location: ${gameGroup.location}</li>
               <li class="list-group-item">Player Slots: ${gameGroup.playerSlots}</li>
               <a href="/gamegroups/updateForm/${gameGroup.groupID}" class="btn btn-primary">Update Game Group</a>
-              <a href="/gamegroups/delete/${gameGroup.groupID}" class="btn btn-danger">Delete Game Group</a>
+              <a href="/gamegroups/delete/${gameGroup.groupID}/${gameGroup.gameMaster.GMID}" class="btn btn-danger">Delete Game Group</a>
             </ul>
           </div>
       </div>
