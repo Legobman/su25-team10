@@ -16,7 +16,6 @@ public class Player {
     private String password;
     private String email;
 
-    // Constructors
     public Player() {}
 
     public Player(String username, String password, String email) {
@@ -25,7 +24,6 @@ public class Player {
         this.email = email;
     }
 
-    // Getters and Setters
     public Long getPlayerID() {
         return playerID;
     }

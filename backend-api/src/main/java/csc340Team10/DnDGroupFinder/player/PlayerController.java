@@ -12,13 +12,11 @@ public class PlayerController {
     @Autowired
     private PlayerService playerService;
 
-    // Show login form
     @GetMapping("/login")
     public String loginForm() {
         return "player-login";
     }
 
-    // Process login
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
         Player player = playerService.getPlayerByUsername(username);
@@ -31,21 +29,18 @@ public class PlayerController {
         }
     }
 
-    // Show sign-up form
     @GetMapping("/createForm")
     public String createForm(Model model) {
         model.addAttribute("player", new Player());
         return "player-create";
     }
 
-    // Process sign-up
     @PostMapping("/create")
     public String createPlayer(@ModelAttribute Player player) {
         playerService.addPlayer(player);
         return "redirect:/players/login";
     }
 
-    // Show update form
     @GetMapping("/updateForm/{playerID}")
     public String updateForm(@PathVariable Long playerID, Model model) {
         Player player = playerService.getPlayerById(playerID);
@@ -56,14 +51,12 @@ public class PlayerController {
         return "player-update";
     }
 
-    // Process update
     @PostMapping("/update/{playerID}")
     public String updatePlayer(@PathVariable Long playerID, @ModelAttribute Player player) {
         playerService.updatePlayer(playerID, player);
         return "redirect:/players/login";
     }
 
-    // Delete player
     @GetMapping("/delete/{playerID}")
     public String deletePlayer(@PathVariable Long playerID) {
         playerService.deletePlayer(playerID);
